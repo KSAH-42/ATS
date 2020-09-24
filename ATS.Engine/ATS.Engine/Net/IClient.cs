@@ -52,6 +52,18 @@ namespace ATS.Engine.Net
 
 		Task<AuthenticationResponse> AuthenticateAsync( AuthenticationRequest request );
 
+		ListAllEntitiesResponse ListAllEntities();
+
+		Task<ListAllEntitiesResponse> ListAllEntitiesAsync();
+
+		ListAllTransactionsResponse ListAllTransactions();
+
+		Task<ListAllTransactionsResponse> ListAllTransactionsAsync();
+
+		ListAllEventRecordsResponse ListAllEventRecords();
+
+		Task<ListAllEventRecordsResponse> ListAllEventRecordsAsync();
+
 		DeleteEntityResponse DeleteEntity( DeleteEntityRequest request );
 
 		Task<DeleteEntityResponse> DeleteEntityAsync( DeleteEntityRequest request );

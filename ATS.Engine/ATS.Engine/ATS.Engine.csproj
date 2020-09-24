@@ -78,6 +78,9 @@
     <Compile Include="Net\Requests\DeleteEventRecordRequest.cs" />
     <Compile Include="Net\Requests\DeleteTransactionRequest.cs" />
     <Compile Include="Net\Requests\DeleteEntityRequest.cs" />
+    <Compile Include="Net\Responses\ListAllEventRecordsResponse.cs" />
+    <Compile Include="Net\Responses\ListAllTransactionsResponse.cs" />
+    <Compile Include="Net\Responses\ListAllEntitiesResponse.cs" />
     <Compile Include="Net\Responses\DeleteAllEventRecordsResponse.cs" />
     <Compile Include="Net\Responses\DeleteAllTransactionsResponse.cs" />
     <Compile Include="Net\Responses\DeleteAllEntitiesResponse.cs" />
