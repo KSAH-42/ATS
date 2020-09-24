@@ -10,7 +10,7 @@ namespace ATS.Engine.Net
 
 		private DateTime          _modificationTime = DateTime.MinValue;
 
-		private string            _label            = string.Empty;
+		private string            _name             = string.Empty;
 
 		private string            _description      = string.Empty;
 
@@ -49,10 +49,10 @@ namespace ATS.Engine.Net
 			set => SetField( ref _modificationTime , value );
 		}
 
-		public string Label
+		public string Name
 		{
-			get => GetField( ref _label );
-			set => SetField( ref _label , value ?? string.Empty );
+			get => GetField( ref _name );
+			set => SetField( ref _name , value ?? string.Empty );
 		}
 
 		public string Description
