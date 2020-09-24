@@ -2,7 +2,7 @@
 
 namespace ATS.Engine.Net.Responses
 {
-	public abstract class BaseResponse
+	public abstract class BaseResponse : IResponse
 	{
 	}
 }

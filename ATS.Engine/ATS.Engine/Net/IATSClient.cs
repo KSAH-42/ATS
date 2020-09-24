@@ -13,12 +13,17 @@ namespace ATS.Engine.Net
 			get;
 		}
 
-		Guid SessionId
+		Guid? SessionId
 		{
 			get;
 		}
 
 		DOReadOnlyCache<DOEntity> Entities
+		{
+			get;
+		}
+
+		HandlerList Handlers
 		{
 			get;
 		}

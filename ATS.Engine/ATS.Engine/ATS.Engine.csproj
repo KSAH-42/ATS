@@ -42,9 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Net\BadRequestException.cs" />
+    <Compile Include="Net\HandlerList.cs" />
+    <Compile Include="Net\Handlers\NullHandler.cs" />
+    <Compile Include="Net\IResponse.cs" />
+    <Compile Include="Net\IRequest.cs" />
     <Compile Include="Net\DOAccount.cs" />
     <Compile Include="Net\DOAdviser.cs" />
     <Compile Include="Net\DOCache.cs" />
+    <Compile Include="Net\Handlers\Handler.cs" />
+    <Compile Include="Net\IHandler.cs" />
     <Compile Include="Net\IATSClient.cs" />
     <Compile Include="Net\DOUniqueIdList.cs" />
     <Compile Include="Net\DOCard.cs" />
