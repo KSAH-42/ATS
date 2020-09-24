@@ -4,9 +4,11 @@ namespace ATS.Engine.Net.Requests
 {
 	public sealed class AuthenticationRequest : BaseRequest
 	{
-		private string _loginId  = string.Empty;
+		private readonly string _loginId  = string.Empty;
 
-		private string _password = string.Empty;
+		private readonly string _password = string.Empty;
+
+
 
 
 		public AuthenticationRequest( string loginId , string password )

@@ -6,7 +6,7 @@ namespace ATS.Engine.Net
 	using ATS.Engine.Net.Requests;
 	using ATS.Engine.Net.Responses;
 
-	public interface IATSClient
+	public interface IClient
 	{
 		object SyncRoot
 		{
@@ -23,17 +23,17 @@ namespace ATS.Engine.Net
 			get;
 		}
 
+		PermissionReadOnlyList Permissions
+		{
+			get;
+		}
+
 		HandlerList Handlers
 		{
 			get;
 		}
 
 		bool IsConnected
-		{
-			get;
-		}
-
-		bool IsAuthenticated
 		{
 			get;
 		}

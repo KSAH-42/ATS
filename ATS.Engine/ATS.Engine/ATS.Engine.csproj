@@ -44,6 +44,7 @@
     <Compile Include="Net\BadRequestException.cs" />
     <Compile Include="Net\HandlerList.cs" />
     <Compile Include="Net\Handlers\NullHandler.cs" />
+    <Compile Include="Net\IClient.cs" />
     <Compile Include="Net\IResponse.cs" />
     <Compile Include="Net\IRequest.cs" />
     <Compile Include="Net\DOAccount.cs" />
@@ -51,7 +52,6 @@
     <Compile Include="Net\DOCache.cs" />
     <Compile Include="Net\Handlers\Handler.cs" />
     <Compile Include="Net\IHandler.cs" />
-    <Compile Include="Net\IATSClient.cs" />
     <Compile Include="Net\DOUniqueIdList.cs" />
     <Compile Include="Net\DOCard.cs" />
     <Compile Include="Net\DOAddress.cs" />
@@ -68,6 +68,9 @@
     <Compile Include="Net\DORoot.cs" />
     <Compile Include="Net\DOSetting.cs" />
     <Compile Include="Net\DOTransaction.cs" />
+    <Compile Include="Net\Permission.cs" />
+    <Compile Include="Net\PermissionReadOnlyList.cs" />
+    <Compile Include="Net\PermissionList.cs" />
     <Compile Include="Net\Requests\DeleteAllEventRecordsRequest.cs" />
     <Compile Include="Net\Requests\DeleteAllTransactionsRequest.cs" />
     <Compile Include="Net\Requests\DeleteAllEntitiesRequest.cs" />
