@@ -48,6 +48,8 @@ namespace ATS.Engine.Net
 
 		void Disconnect();
 
+		void Ping();
+
 		AuthenticationResponse Authenticate( AuthenticationRequest request );
 
 		Task<AuthenticationResponse> AuthenticateAsync( AuthenticationRequest request );
