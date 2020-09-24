@@ -1,6 +1,6 @@
 # ATS
 
-This project is actual under contruction, there is some project which not contains any classes. Go back in this project in few days later. 
+This project is actually under construction, there is some project which not contains any classes. Go back to this project in a few days later. 
 
 Thanks.
 
