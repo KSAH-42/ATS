@@ -4,19 +4,19 @@ using System.Runtime.Serialization;
 namespace ATS.Engine.Net
 {
 	[System.Serializable]
-	public class BadRequestException : Exception
+	public class InvalidRequestException : Exception
 	{
-		public BadRequestException() 
+		public InvalidRequestException() 
 			: this( string.Empty ) 
 		{
 		}
 
-		public BadRequestException( string message )
+		public InvalidRequestException( string message )
 			: base( $"Bad request {message}" )
 		{
 		}
 
-		protected BadRequestException( SerializationInfo info , StreamingContext context ) 
+		protected InvalidRequestException( SerializationInfo info , StreamingContext context ) 
 			: base( info , context ) 
 		{
 		}
