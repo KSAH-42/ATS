@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Net\BadRequestException.cs" />
+    <Compile Include="Net\Enums.cs" />
     <Compile Include="Net\HandlerList.cs" />
     <Compile Include="Net\Handlers\NullHandler.cs" />
     <Compile Include="Net\IClient.cs" />

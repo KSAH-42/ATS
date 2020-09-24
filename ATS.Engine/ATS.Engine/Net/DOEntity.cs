@@ -2,20 +2,6 @@
 
 namespace ATS.Engine.Net
 {
-	public enum DOEntityTypes
-	{
-		Customer = 1 ,
-		
-		Account , 
-
-		Card ,
-
-		Setting ,
-
-		Adviser ,
-
-	}
-
 	public abstract class DOEntity : DORoot
 	{
 		private readonly Guid     _uniqueId         = Guid.Empty;
@@ -44,7 +30,7 @@ namespace ATS.Engine.Net
 
 
 
-		public abstract DOEntityTypes EntityType
+		public abstract DOEntityType Type
 		{
 			get;
 		}

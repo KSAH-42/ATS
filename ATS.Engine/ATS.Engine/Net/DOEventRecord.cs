@@ -2,32 +2,6 @@
 
 namespace ATS.Engine.Net
 {
-	public enum EventRecordType
-	{
-		None = 0,
-
-		UserConnected,
-
-		UserDisconnected,
-
-		CardOrdered,
-
-		CardEnabled,
-
-		CardDisabled,
-
-		AccountOpened,
-
-		AccountClosed,
-
-		WithdrawMoney,
-
-		DepositMoney,
-	}
-
-
-
-
 	public sealed class DOEventRecord : DORoot
 	{
 		private readonly Guid     _uniqueId         = Guid.Empty;

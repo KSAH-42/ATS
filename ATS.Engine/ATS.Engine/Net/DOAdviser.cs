@@ -20,9 +20,9 @@ namespace ATS.Engine.Net
 
 
 
-		public override DOEntityTypes EntityType
+		public override DOEntityType Type
 		{
-			get => DOEntityTypes.Adviser;
+			get => DOEntityType.Adviser;
 		}
 
 		public DOPersonalInfos Informations

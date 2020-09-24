@@ -24,9 +24,9 @@ namespace ATS.Engine.Net
 
 
 
-		public override DOEntityTypes EntityType
+		public override DOEntityType Type
 		{
-			get => DOEntityTypes.Setting;
+			get => DOEntityType.Setting;
 		}
 
 		public Guid OwnerId

@@ -6,8 +6,6 @@ namespace ATS.Engine.Net
 	{
 		private Guid     _customerId    = Guid.Empty;
 
-		private Guid     _type          = Guid.Empty;
-
 		private string   _number        = string.Empty;
 
 		private string   _pincode       = string.Empty;
@@ -26,21 +24,15 @@ namespace ATS.Engine.Net
 
 
 
-		public override DOEntityTypes EntityType
+		public override DOEntityType Type
 		{
-			get => DOEntityTypes.Card;
+			get => DOEntityType.Card;
 		}
 
 		public Guid CustomerId
 		{
 			get => GetField( ref _customerId );
 			set => SetField( ref _customerId , value );
-		}
-
-		public Guid Type
-		{
-			get => GetField( ref _type );
-			set => SetField( ref _type , value );
 		}
 
 		public string Number
