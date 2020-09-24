@@ -41,9 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Net\BadRequestException.cs" />
     <Compile Include="Net\DOAccount.cs" />
+    <Compile Include="Net\DOAdviser.cs" />
+    <Compile Include="Net\DOCache.cs" />
+    <Compile Include="Net\IATSClient.cs" />
     <Compile Include="Net\DOUniqueIdList.cs" />
-    <Compile Include="Net\DOEntityCache.cs" />
     <Compile Include="Net\DOCard.cs" />
     <Compile Include="Net\DOAddress.cs" />
     <Compile Include="Net\DOContacts.cs" />
@@ -59,6 +62,22 @@
     <Compile Include="Net\DORoot.cs" />
     <Compile Include="Net\DOSetting.cs" />
     <Compile Include="Net\DOTransaction.cs" />
+    <Compile Include="Net\Requests\DeleteAllEventRecordsRequest.cs" />
+    <Compile Include="Net\Requests\DeleteAllTransactionsRequest.cs" />
+    <Compile Include="Net\Requests\DeleteAllEntitiesRequest.cs" />
+    <Compile Include="Net\Requests\DeleteEventRecordRequest.cs" />
+    <Compile Include="Net\Requests\DeleteTransactionRequest.cs" />
+    <Compile Include="Net\Requests\DeleteEntityRequest.cs" />
+    <Compile Include="Net\Responses\DeleteAllEventRecordsResponse.cs" />
+    <Compile Include="Net\Responses\DeleteAllTransactionsResponse.cs" />
+    <Compile Include="Net\Responses\DeleteAllEntitiesResponse.cs" />
+    <Compile Include="Net\Responses\DeleteEventRecordResponse.cs" />
+    <Compile Include="Net\Responses\DeleteTransactionResponse.cs" />
+    <Compile Include="Net\Responses\DeleteEntityResponse.cs" />
+    <Compile Include="Net\Responses\AuthenticationResponse.cs" />
+    <Compile Include="Net\Responses\BaseResponse.cs" />
+    <Compile Include="Net\Requests\AuthenticationRequest.cs" />
+    <Compile Include="Net\Requests\BaseRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

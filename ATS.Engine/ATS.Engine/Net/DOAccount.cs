@@ -22,6 +22,10 @@ namespace ATS.Engine.Net
 
 
 
+		public override DOEntityTypes EntityType
+		{
+			get => DOEntityTypes.Account;
+		}
 
 		public Guid CustomerId
 		{

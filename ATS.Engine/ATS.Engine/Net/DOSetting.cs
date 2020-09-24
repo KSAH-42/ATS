@@ -2,10 +2,8 @@
 
 namespace ATS.Engine.Net
 {
-	public sealed class DOSetting : DORoot
+	public sealed class DOSetting : DOEntity
 	{
-		private readonly Guid     _uniqueId         = Guid.Empty;
-
 		private Guid              _ownerId          = Guid.Empty;
 
 		private string            _value            = string.Empty;
@@ -17,8 +15,8 @@ namespace ATS.Engine.Net
 
 
 		public DOSetting( Guid uniqueId )
+			: base( uniqueId )
 		{
-			_uniqueId = uniqueId;
 		}
 
 
@@ -26,9 +24,9 @@ namespace ATS.Engine.Net
 
 
 
-		public override Guid UniqueId
+		public override DOEntityTypes EntityType
 		{
-			get => _uniqueId;
+			get => DOEntityTypes.Setting;
 		}
 
 		public Guid OwnerId

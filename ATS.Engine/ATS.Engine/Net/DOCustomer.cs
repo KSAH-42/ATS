@@ -27,6 +27,10 @@ namespace ATS.Engine.Net
 
 
 
+		public override DOEntityTypes EntityType
+		{
+			get => DOEntityTypes.Customer;
+		}
 
 		public DOPersonalInfos Informations
 		{
