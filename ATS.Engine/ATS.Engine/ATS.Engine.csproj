@@ -41,7 +41,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Net\DOAccount.cs" />
+    <Compile Include="Net\DOUniqueIdList.cs" />
+    <Compile Include="Net\DOEntityCache.cs" />
+    <Compile Include="Net\DOCard.cs" />
+    <Compile Include="Net\DOAddress.cs" />
+    <Compile Include="Net\DOContacts.cs" />
+    <Compile Include="Net\DOPersonalInfos.cs" />
+    <Compile Include="Net\DOCredentials.cs" />
+    <Compile Include="Net\DOCustomer.cs" />
+    <Compile Include="Net\DOEntity.cs" />
+    <Compile Include="Net\DOEventRecord.cs" />
+    <Compile Include="Net\DOPropertyChangingEventArgs.cs" />
+    <Compile Include="Net\DOPropertyChangedEventArgs.cs" />
+    <Compile Include="Net\DOReadOnlyCache.cs" />
+    <Compile Include="Net\DOValue.cs" />
+    <Compile Include="Net\DORoot.cs" />
+    <Compile Include="Net\DOSetting.cs" />
+    <Compile Include="Net\DOTransaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
