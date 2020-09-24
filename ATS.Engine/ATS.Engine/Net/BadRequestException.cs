@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace ATS.Engine.Net
 {
 	[System.Serializable]
-	class BadRequestException : Exception
+	public class BadRequestException : Exception
 	{
 		public BadRequestException() 
 			: this( string.Empty ) 

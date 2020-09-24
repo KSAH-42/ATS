@@ -10,7 +10,6 @@ namespace ATS.Engine.Testing.Labs
 	{
 		static void Main( string[] args )
 		{
-			ATS.Engine.Net.IATSClient _client = null;
 		}
 	}
 }
