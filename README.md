@@ -1,8 +1,7 @@
 # ATS
 
-This project is actually under construction, there is some project which doesn't contains any classes. Go back to this project few days later.
+This project is actually under construction, there are some projects which doesn't contains any classes. Please, go back to this project a few days later.
 
-Thanks.
 
 I create this project in order to explorer a different to build client API.
 So here, ATS stands for Automatic Trading Software.
