@@ -47,6 +47,7 @@
     <Compile Include="Net\Handlers\NullHandler.cs" />
     <Compile Include="Net\IClient.cs" />
     <Compile Include="Net\InternalValidator.cs" />
+    <Compile Include="Net\PermissionManager.cs" />
     <Compile Include="Net\Requests\DisableCardRequest.cs" />
     <Compile Include="Net\Requests\EnableCardRequest.cs" />
     <Compile Include="Net\Requests\WithdrawRequest.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Net\Responses\DepositResponse.cs" />
     <Compile Include="Net\Responses\ReOpenAccountResponse.cs" />
     <Compile Include="Net\Responses\OpenAccountResponse.cs" />
+    <Compile Include="Net\UnAuthorizationException.cs" />
     <Compile Include="Net\ValidationException.cs" />
     <Compile Include="Net\IResponse.cs" />
     <Compile Include="Net\IRequest.cs" />
