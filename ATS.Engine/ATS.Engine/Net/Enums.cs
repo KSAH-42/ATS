@@ -4,16 +4,13 @@ namespace ATS.Engine.Net
 {
 	public enum DOEntityType
 	{
-		Customer = 1,
+		User = 1,
 
 		Account,
 
 		Card,
 
 		Setting,
-
-		Adviser,
-
 	}
 
 	public enum EventRecordType

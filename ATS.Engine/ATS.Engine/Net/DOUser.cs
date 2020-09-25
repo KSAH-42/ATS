@@ -13,12 +13,22 @@ namespace ATS.Engine.Net
 		private readonly DOCredentials   _credentials   = new DOCredentials();
 
 
+
+
+
 		protected DOUser( Guid uniqueId )
 			: base ( uniqueId )
 		{
 		}
 
 
+
+
+
+		public sealed override DOEntityType Type
+		{
+			get => DOEntityType.User;
+		}
 
 		public DOPersonalInfos Informations
 		{

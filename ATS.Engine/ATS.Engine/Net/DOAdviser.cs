@@ -16,11 +16,6 @@ namespace ATS.Engine.Net
 
 
 
-		public override DOEntityType Type
-		{
-			get => DOEntityType.Adviser;
-		}
-
 		public DOUniqueIdList Customers
 		{
 			get => _customers;

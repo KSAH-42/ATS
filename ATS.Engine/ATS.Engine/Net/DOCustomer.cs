@@ -19,11 +19,6 @@ namespace ATS.Engine.Net
 
 
 
-		public override DOEntityType Type
-		{
-			get => DOEntityType.Customer;
-		}
-
 		public DOUniqueIdList Accounts
 		{
 			get => _accounts;
