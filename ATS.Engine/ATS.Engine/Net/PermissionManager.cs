@@ -5,12 +5,12 @@ namespace ATS.Engine.Net
 {
 	public class PermissionManager
 	{
-		private readonly PermissionList _permissions = null;
+		private readonly PermissionReadOnlyList _permissions = null;
 
 
 
 
-		public PermissionManager( PermissionList permissions )
+		public PermissionManager( PermissionReadOnlyList permissions )
 		{
 			_permissions = permissions ?? throw new ArgumentNullException( nameof( permissions ) );
 
