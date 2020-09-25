@@ -27,7 +27,7 @@ namespace ATS.Engine.Net
 				{
 					return;
 				}
-
+				
 				if ( _permissions[ permissionId ].IsGranted )
 				{
 					return;

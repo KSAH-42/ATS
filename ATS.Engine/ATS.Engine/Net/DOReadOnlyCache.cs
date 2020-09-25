@@ -141,6 +141,26 @@ namespace ATS.Engine.Net
 			return _cache.Contains( element );
 		}
 
+		public TDOElement FindFirst()
+		{
+			return _cache.FindFirst();
+		}
+
+		public TItem FindFirst<TItem>() where TItem : TDOElement
+		{
+			return _cache.FindFirst<TItem>();
+		}
+
+		public TDOElement FindFirst( Func<TDOElement,bool> predicate )
+		{
+			return _cache.FindFirst( predicate );
+		}
+
+		public TItem FindFirst<TItem>( Func<TItem , bool> predicate ) where TItem : TDOElement
+		{
+			return _cache.FindFirst( predicate );
+		}
+
 		public TDOElement FindById( Guid id )
 		{
 			return _cache.FindById( id );

@@ -8,7 +8,7 @@ namespace ATS.Engine.Net
 
 		private DateTime          _timestamp        = DateTime.MinValue;
 
-		private EventType         _type             = EventType.None;
+		private DOEventType         _type             = DOEventType.None;
 
 		private Guid              _applicationId    = Guid.Empty;
 
@@ -41,7 +41,7 @@ namespace ATS.Engine.Net
 			set => SetField( ref _timestamp , value );
 		}
 
-		public EventType Type
+		public DOEventType Type
 		{
 			get => GetField( ref _type );
 			set => SetField( ref _type , value );

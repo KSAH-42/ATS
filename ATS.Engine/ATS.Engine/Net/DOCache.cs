@@ -464,6 +464,71 @@ namespace ATS.Engine.Net
 			}
 		}
 
+		public TDOElement FindFirst()
+		{
+			lock ( _lock )
+			{
+				return _collection.Values.FirstOrDefault();
+			}
+		}
+
+		public TItem FindFirst<TItem>() where TItem : TDOElement
+		{
+			lock ( _lock )
+			{
+				foreach ( var element in _collection.Values )
+				{
+					if ( element is TItem )
+					{
+						return element as TItem;
+					}
+				}
+
+				return null;
+			}
+		}
+
+		public TDOElement FindFirst( Func<TDOElement,bool> predicate )
+		{
+			if ( predicate == null )
+			{
+				throw new ArgumentNullException( nameof( predicate ) );
+			}
+
+			lock ( _lock )
+			{
+				return _collection.Values.FirstOrDefault( predicate );
+			}
+		}
+
+		public TItem FindFirst<TItem>( Func<TItem , bool> predicate ) where TItem : TDOElement
+		{
+			if ( predicate == null )
+			{
+				throw new ArgumentNullException( nameof( predicate ) );
+			}
+
+			lock ( _lock )
+			{
+				foreach ( var element in _collection.Values )
+				{
+					var desiredElement = element as TItem;
+
+					if ( null == desiredElement )
+					{
+						continue;
+					}
+
+					if ( predicate.Invoke( desiredElement ) )
+					{
+						return desiredElement;
+					}
+				}
+
+				return null;
+			}
+		}
+
 		public TDOElement FindById( Guid id )
 		{
 			lock ( _lock )

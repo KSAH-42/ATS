@@ -13,7 +13,7 @@ namespace ATS.Engine.Net
 		Setting,
 	}
 
-	public enum EventType
+	public enum DOEventType
 	{
 		None = 0,
 
