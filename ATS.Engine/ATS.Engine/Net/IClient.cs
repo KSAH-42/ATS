@@ -183,6 +183,18 @@ namespace ATS.Engine.Net
 
 		Task<DeleteEventRecordsResponse> DeleteEventRecordsAsync( DeleteEventRecordsRequest request , CancellationToken cancellationToken );
 
+		SearchTransactionsResponse SearchTransactions( SearchTransactionsRequest request );
+
+		Task<SearchTransactionsResponse> SearchTransactionsAsync( SearchTransactionsRequest request );
+
+		Task<SearchTransactionsResponse> SearchTransactionsAsync( SearchTransactionsRequest request , CancellationToken cancellationToken );
+
+		SearchEventRecordsResponse SearchEventRecords( SearchEventRecordsRequest request );
+
+		Task<SearchEventRecordsResponse> SearchEventRecordsAsync( SearchEventRecordsRequest request );
+
+		Task<SearchEventRecordsResponse> SearchEventRecordsAsync( SearchEventRecordsRequest request , CancellationToken cancellationToken );
+
 		OpenAccountResponse OpenAccount( OpenAccountRequest request );
 
 		Task<OpenAccountResponse> OpenAccountAsync( OpenAccountRequest request );

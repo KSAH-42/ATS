@@ -24,9 +24,9 @@ namespace ATS.Engine.Net.Requests
 			get => _customerId;
 		}
 
-		public Guid AccountId
+		public Guid CardId
 		{
-			get => _customerId;
+			get => _cardId;
 		}
 
 	}

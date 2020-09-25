@@ -48,6 +48,8 @@
     <Compile Include="Net\IClient.cs" />
     <Compile Include="Net\InternalValidator.cs" />
     <Compile Include="Net\PermissionManager.cs" />
+    <Compile Include="Net\Requests\SearchEventRecordsRequest.cs" />
+    <Compile Include="Net\Requests\SearchTransactionsRequest.cs" />
     <Compile Include="Net\Requests\DisableCardRequest.cs" />
     <Compile Include="Net\Requests\EnableCardRequest.cs" />
     <Compile Include="Net\Requests\WithdrawRequest.cs" />
@@ -58,11 +60,13 @@
     <Compile Include="Net\Responses\CloseAccountResponse.cs" />
     <Compile Include="Net\Responses\DisableCardResponse.cs" />
     <Compile Include="Net\Responses\EnableCardResponse.cs" />
+    <Compile Include="Net\Responses\SearchTransactionsResponse.cs" />
+    <Compile Include="Net\Responses\SearchEventRecordsResponse.cs" />
     <Compile Include="Net\Responses\WithdrawResponse.cs" />
     <Compile Include="Net\Responses\DepositResponse.cs" />
     <Compile Include="Net\Responses\ReOpenAccountResponse.cs" />
     <Compile Include="Net\Responses\OpenAccountResponse.cs" />
-    <Compile Include="Net\UnAuthorizationException.cs" />
+    <Compile Include="Net\PermissionException.cs" />
     <Compile Include="Net\ValidationException.cs" />
     <Compile Include="Net\IResponse.cs" />
     <Compile Include="Net\IRequest.cs" />

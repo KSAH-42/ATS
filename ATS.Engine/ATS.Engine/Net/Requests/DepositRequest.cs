@@ -30,7 +30,7 @@ namespace ATS.Engine.Net.Requests
 
 		public Guid AccountId
 		{
-			get => _customerId;
+			get => _accountId;
 		}
 
 		public decimal Price

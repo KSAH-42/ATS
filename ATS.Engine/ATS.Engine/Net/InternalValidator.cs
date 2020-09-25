@@ -26,14 +26,14 @@ namespace ATS.Engine.Net
 			return price;
 		}
 
-		public static string CheckLoginId( string text )
+		public static string CheckLogin( string loginId )
 		{
-			if ( string.IsNullOrWhiteSpace( text ) )
+			if ( string.IsNullOrWhiteSpace( loginId ) )
 			{
 				throw new ValidationException();
 			}
 
-			return text;
+			return loginId;
 		}
 
 		public static DateTime CheckTime( DateTime time )
@@ -46,7 +46,7 @@ namespace ATS.Engine.Net
 			return time;
 		}
 
-		public static void CheckTimeRange( DateTime startTime , DateTime endTime )
+		public static DateTime CheckStartTime( DateTime startTime , DateTime endTime )
 		{
 			if ( startTime == DateTime.MinValue || startTime == DateTime.MaxValue )
 			{
@@ -62,6 +62,38 @@ namespace ATS.Engine.Net
 			{
 				throw new ValidationException();
 			}
+
+			return startTime;
+		}
+
+		public static int CheckMaximumOfResults( int value )
+		{
+			if ( 1 <= value && value <= 10000 )
+			{
+				return value;
+			}
+
+			throw new ValidationException();
+		}
+
+		public static DateTime CheckEndTime( DateTime startTime , DateTime endTime )
+		{
+			if ( startTime == DateTime.MinValue || startTime == DateTime.MaxValue )
+			{
+				throw new ValidationException();
+			}
+
+			if ( endTime == DateTime.MinValue || endTime == DateTime.MaxValue )
+			{
+				throw new ValidationException();
+			}
+
+			if ( startTime >= endTime )
+			{
+				throw new ValidationException();
+			}
+
+			return endTime;
 		}
 
 		public static IEnumerable<TElement> CheckCollection<TElement>( IEnumerable<TElement> elements )

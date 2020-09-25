@@ -18,12 +18,7 @@ namespace ATS.Engine.Net
 
 		public DOReadOnlyCache( DOCache<TDOElement> cache )
 		{
-			if ( cache == null )
-			{
-				throw new ArgumentNullException( nameof( cache ) );
-			}
-
-			_cache = cache;
+			_cache = cache ?? throw new ArgumentNullException( nameof( cache ) ); ;
 		}
 
 
