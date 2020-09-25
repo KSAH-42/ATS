@@ -4,6 +4,15 @@ namespace ATS.Engine.Net
 {
 	public abstract class DOUser : DOEntity
 	{
+		private readonly DOPersonalInfos _personalInfos = new DOPersonalInfos();
+
+		private readonly DOAddress       _address       = new DOAddress();
+
+		private readonly DOContacts      _contacts      = new DOContacts();
+
+		private readonly DOCredentials   _credentials   = new DOCredentials();
+
+
 		protected DOUser( Guid uniqueId )
 			: base ( uniqueId )
 		{
@@ -11,20 +20,47 @@ namespace ATS.Engine.Net
 
 
 
-		public abstract DOPersonalInfos Informations
+		public DOPersonalInfos Informations
 		{
-			get;
+			get => _personalInfos;
 		}
 
-		public abstract DOContacts Contacts
+		public DOContacts Contacts
 		{
-			get;
+			get => _contacts;
 		}
 
-		public abstract DOCredentials Credentials
+		public DOAddress Address
 		{
-			get;
+			get => _address;
 		}
 
+		public DOCredentials Credentials
+		{
+			get => _credentials;
+		}
+
+		public override bool IsDirty
+		{
+			get
+			{
+				return base.IsDirty
+
+					|| _personalInfos.IsDirty
+					|| _address      .IsDirty
+					|| _contacts     .IsDirty
+					|| _credentials  .IsDirty;
+			}
+
+			set
+			{
+				base.IsDirty = value;
+
+				_personalInfos.IsDirty = value;
+				_address      .IsDirty = value;
+				_contacts     .IsDirty = value;
+				_credentials  .IsDirty = value;
+			}
+		}
 	}
 }
