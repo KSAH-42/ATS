@@ -2,12 +2,12 @@
 
 namespace ATS.Engine.Net.Responses
 {
-	public sealed class DeleteAllEntitiesResponse : BaseResponse
+	public sealed class DeleteTransactionsResponse : BaseResponse
 	{
 		private readonly int _results = 0;
 
 
-		public DeleteAllEntitiesResponse( int results )
+		public DeleteTransactionsResponse( int results )
 		{
 			_results = results;
 		}

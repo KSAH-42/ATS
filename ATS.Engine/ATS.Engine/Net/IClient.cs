@@ -5,6 +5,7 @@ namespace ATS.Engine.Net
 {
 	using ATS.Engine.Net.Requests;
 	using ATS.Engine.Net.Responses;
+	using System.Threading;
 
 	public interface IClient
 	{
@@ -52,70 +53,90 @@ namespace ATS.Engine.Net
 
 		AuthenticationResponse Authenticate( AuthenticationRequest request );
 
-		Task<AuthenticationResponse> AuthenticateAsync( AuthenticationRequest request );
+		Task<AuthenticationResponse> AuthenticateAsync( AuthenticationRequest request , CancellationToken cancellationToken );
 
-		GetEntityResponse GetEntity( GetEntityRequest request );
+		SaveEntityResponse SaveEntity( SaveEntityRequest request );
 
-		Task<GetEntityResponse> GetEntityAsync( GetEntityRequest request );
+		Task<SaveEntityResponse> SaveEntityAsync( SaveEntityRequest request , CancellationToken cancellationToken );
+
+		SaveTransactionResponse SaveTransaction( SaveTransactionRequest request );
+
+		Task<SaveTransactionResponse> SaveTransactionAsync( SaveTransactionRequest request , CancellationToken cancellationToken );
+
+		SaveEventRecordResponse SaveEventRecord( SaveEventRecordRequest request );
+
+		Task<SaveEventRecordResponse> SaveEventRecordAsync( SaveEventRecordRequest request , CancellationToken cancellationToken );
+
+		FindEntityResponse FindEntity( FindEntityRequest request );
+
+		Task<FindEntityResponse> FindEntityAsync( FindEntityRequest request , CancellationToken cancellationToken );
+
+		FindTransactionResponse FindTransaction( FindTransactionRequest request );
+
+		Task<FindTransactionResponse> FindTransactionAsync( FindTransactionRequest request , CancellationToken cancellationToken );
+
+		FindEventRecordResponse FindEventRecord( FindEventRecordRequest request );
+
+		Task<FindEventRecordResponse> FindEventRecordAsync( FindEventRecordRequest request , CancellationToken cancellationToken );
 
 		ListEntitiesResponse ListEntities();
 
-		Task<ListEntitiesResponse> ListEntitiesAsync();
+		Task<ListEntitiesResponse> ListEntitiesAsync( CancellationToken cancellationToken );
 
 		ListEntitiesResponse ListEntities( ListEntitiesRequest request );
 
-		Task<ListEntitiesResponse> ListEntitiesAsync( ListEntitiesRequest request );
+		Task<ListEntitiesResponse> ListEntitiesAsync( ListEntitiesRequest request , CancellationToken cancellationToken );
 
 		ListTransactionsResponse ListTransactions();
 
-		Task<ListTransactionsResponse> ListTransactionsAsync();
+		Task<ListTransactionsResponse> ListTransactionsAsync( CancellationToken cancellationToken );
 
 		ListTransactionsResponse ListTransactions( ListTransactionsRequest request );
 
-		Task<ListTransactionsResponse> ListTransactionsAsync( ListTransactionsRequest request );
+		Task<ListTransactionsResponse> ListTransactionsAsync( ListTransactionsRequest request , CancellationToken cancellationToken );
 
 		ListEventRecordsResponse ListEventRecords();
 
-		Task<ListEventRecordsResponse> ListEventRecordsAsync();
+		Task<ListEventRecordsResponse> ListEventRecordsAsync( CancellationToken cancellationToken );
 
 		ListEventRecordsResponse ListEventRecords( ListEventRecordsRequest request );
 
-		Task<ListEventRecordsResponse> ListEventRecordsAsync( ListEventRecordsRequest request );
+		Task<ListEventRecordsResponse> ListEventRecordsAsync( ListEventRecordsRequest request , CancellationToken cancellationToken );
 
 		DeleteEntityResponse DeleteEntity( DeleteEntityRequest request );
 
-		Task<DeleteEntityResponse> DeleteEntityAsync( DeleteEntityRequest request );
+		Task<DeleteEntityResponse> DeleteEntityAsync( DeleteEntityRequest request , CancellationToken cancellationToken );
 
 		DeleteTransactionResponse DeleteTransaction( DeleteTransactionRequest request );
 
-		Task<DeleteTransactionResponse> DeleteTransactionAsync( DeleteTransactionRequest request );
+		Task<DeleteTransactionResponse> DeleteTransactionAsync( DeleteTransactionRequest request , CancellationToken cancellationToken );
 
 		DeleteEventRecordResponse DeleteEventRecord( DeleteEventRecordRequest request );
 
-		Task<DeleteEventRecordResponse> DeleteEventRecordAsync( DeleteEventRecordRequest request );
+		Task<DeleteEventRecordResponse> DeleteEventRecordAsync( DeleteEventRecordRequest request , CancellationToken cancellationToken );
 
-		DeleteAllEntitiesResponse DeleteAllEntities();
+		DeleteEntitiesResponse DeleteEntities();
 
-		Task<DeleteAllEntitiesResponse> DeleteAllEntitiesAsync();
+		Task<DeleteEntitiesResponse> DeleteEntitiesAsync( CancellationToken cancellationToken );
 
-		DeleteAllEntitiesResponse DeleteAllEntities( DeleteAllEntitiesRequest request );
+		DeleteEntitiesResponse DeleteEntities( DeleteEntitiesRequest request );
 
-		Task<DeleteAllEntitiesResponse> DeleteAllEntitiesAsync( DeleteAllEntitiesRequest request );
+		Task<DeleteEntitiesResponse> DeleteEntitiesAsync( DeleteEntitiesRequest request , CancellationToken cancellationToken );
 
-		DeleteAllTransactionsResponse DeleteAllTransactions();
+		DeleteTransactionsResponse DeleteTransactions();
 		
-		Task<DeleteAllTransactionsResponse> DeleteAllTransactionsAsync();
+		Task<DeleteTransactionsResponse> DeleteTransactionsAsync( CancellationToken cancellationToken );
 
-		DeleteAllTransactionsResponse DeleteAllTransactions( DeleteAllTransactionsRequest request );
+		DeleteTransactionsResponse DeleteTransactions( DeleteTransactionsRequest request );
 
-		Task<DeleteAllTransactionsResponse> DeleteAllTransactionsAsync( DeleteAllTransactionsRequest request );
+		Task<DeleteTransactionsResponse> DeleteTransactionsAsync( DeleteTransactionsRequest request , CancellationToken cancellationToken );
 
-		DeleteAllEventRecordsResponse DeleteAllEventRecords();
+		DeleteEventRecordsResponse DeleteEventRecords();
 
-		Task<DeleteAllEventRecordsResponse> DeleteAllEventRecordsAsync();
+		Task<DeleteEventRecordsResponse> DeleteEventRecordsAsync( CancellationToken cancellationToken );
 
-		DeleteAllEventRecordsResponse DeleteAllEventRecords( DeleteAllEventRecordsRequest request );
+		DeleteEventRecordsResponse DeleteEventRecords( DeleteEventRecordsRequest request );
 
-		Task<DeleteAllEventRecordsResponse> DeleteAllEventRecordsAsync( DeleteAllEventRecordsRequest request );
+		Task<DeleteEventRecordsResponse> DeleteEventRecordsAsync( DeleteEventRecordsRequest request , CancellationToken cancellationToken );
 	}
 }

@@ -4,12 +4,12 @@ using System.Collections.Generic;
 
 namespace ATS.Engine.Net.Requests
 {
-	public sealed class DeleteAllEntitiesRequest : BaseRequest
+	public sealed class DeleteEntitiesRequest : BaseRequest
 	{
 		private readonly IReadOnlyCollection<Guid> _entities = null;
 
 
-		public DeleteAllEntitiesRequest( IReadOnlyCollection<Guid> entities )
+		public DeleteEntitiesRequest( IReadOnlyCollection<Guid> entities )
 		{
 			_entities = entities ?? throw new ArgumentNullException( nameof( entities ) );
 		}

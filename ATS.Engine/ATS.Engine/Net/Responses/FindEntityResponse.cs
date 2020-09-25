@@ -2,12 +2,12 @@
 
 namespace ATS.Engine.Net.Responses
 {
-	public sealed class GetEntityResponse : BaseResponse
+	public sealed class FindEntityResponse : BaseResponse
 	{
 		private readonly DOEntity _entity = null;
 
 
-		public GetEntityResponse( DOEntity entity )
+		public FindEntityResponse( DOEntity entity )
 		{
 			_entity = entity;
 		}

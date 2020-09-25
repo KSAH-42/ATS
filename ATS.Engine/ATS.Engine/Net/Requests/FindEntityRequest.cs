@@ -4,12 +4,12 @@ using System.Collections.Generic;
 
 namespace ATS.Engine.Net.Requests
 {
-	public sealed class GetEntityRequest : BaseRequest
+	public sealed class FindEntityRequest : BaseRequest
 	{
 		private readonly Guid _entityId = Guid.Empty;
 
 
-		public GetEntityRequest( Guid entityId )
+		public FindEntityRequest( Guid entityId )
 		{
 			_entityId = entityId;
 		}
