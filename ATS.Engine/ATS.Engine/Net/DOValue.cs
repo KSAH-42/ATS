@@ -3,9 +3,6 @@ using System.Runtime.CompilerServices;
 
 namespace ATS.Engine.Net
 {
-	/// <summary>
-	/// It's just represent the base class for a value object
-	/// </summary>
 	public class DOValue
 	{
 		public event EventHandler<DOPropertyChangedEventArgs>   Changed   = delegate {};

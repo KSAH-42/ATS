@@ -3,9 +3,6 @@ using System.Runtime.CompilerServices;
 
 namespace ATS.Engine.Net
 {
-	/// <summary>
-	/// It's just represent the root class of most of objects, in others words it represent the root aggregate using a Guid as unique identifier. So here Guid data type is just a choice. All objects must provide a Guid. we can "templaterized" this class but I think if we "templaterized" it will add complexity, and the other reason is at this is stage I don't really see any reasons to used an another data type to describe a unique identifier. I think the Guid is the best choice for unique identifier normalization and also in terms of security.
-	/// </summary>
 	public abstract class DORoot
 	{
 		public event EventHandler<DOPropertyChangedEventArgs>   Changed   = delegate {};
