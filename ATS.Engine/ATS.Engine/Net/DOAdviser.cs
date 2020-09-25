@@ -2,9 +2,11 @@
 
 namespace ATS.Engine.Net
 {
-	public sealed class DOAdviser : DOEntity
+	public sealed class DOAdviser : DOUser
 	{
 		private readonly DOPersonalInfos _personalInfos = new DOPersonalInfos();
+
+		private readonly DOContacts      _contacts      = new DOContacts();
 
 		private readonly DOCredentials   _credentials   = new DOCredentials();
 
@@ -25,12 +27,17 @@ namespace ATS.Engine.Net
 			get => DOEntityType.Adviser;
 		}
 
-		public DOPersonalInfos Informations
+		public override DOPersonalInfos Informations
 		{
 			get => _personalInfos;
 		}
 
-		public DOCredentials Credentials
+		public override DOContacts Contacts
+		{
+			get => _contacts;
+		}
+
+		public override DOCredentials Credentials
 		{
 			get => _credentials;
 		}
@@ -46,7 +53,9 @@ namespace ATS.Engine.Net
 			{
 				return base.IsDirty 
 
-					|| _personalInfos.IsDirty 
+					|| _personalInfos.IsDirty
+					|| _contacts     .IsDirty
+					|| _credentials  .IsDirty
 					|| _customers    .IsDirty;
 			}
 
@@ -55,6 +64,8 @@ namespace ATS.Engine.Net
 				base.IsDirty            = value;
 
 				_personalInfos .IsDirty = value;
+				_contacts      .IsDirty = value;
+				_credentials   .IsDirty = value;
 				_customers     .IsDirty = value;
 			}
 		}

@@ -6,11 +6,13 @@ namespace ATS.Engine.Net.Responses
 	{
 		private readonly Guid _sessionId = Guid.Empty;
 
+		private readonly Guid _userId    = Guid.Empty;
 
 
-		public AuthenticationResponse( Guid sessionId )
+		public AuthenticationResponse( Guid sessionId , Guid userId )
 		{
 			_sessionId = sessionId;
+			_userId    = userId;
 		}
 
 
@@ -18,6 +20,11 @@ namespace ATS.Engine.Net.Responses
 		public Guid SessionId
 		{
 			get => _sessionId;
+		}
+
+		public Guid UserId
+		{
+			get => _userId;
 		}
 	}
 }

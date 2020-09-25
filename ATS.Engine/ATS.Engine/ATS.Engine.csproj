@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Net\DOUser.cs" />
     <Compile Include="Net\Enums.cs" />
     <Compile Include="Net\HandlerList.cs" />
     <Compile Include="Net\Handlers\NullHandler.cs" />
