@@ -11,7 +11,7 @@ namespace ATS.Engine.Net.Requests
 
 		public ListTransactionsRequest( IReadOnlyCollection<Guid> transactions )
 		{
-			_transactions = InternalValidator.Validate( transactions );
+			_transactions = InternalValidator.CheckCollection( transactions );
 		}
 
 		

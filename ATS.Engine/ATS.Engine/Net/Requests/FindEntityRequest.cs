@@ -11,7 +11,7 @@ namespace ATS.Engine.Net.Requests
 
 		public FindEntityRequest( Guid entityId )
 		{
-			_entityId = InternalValidator.Validate( entityId );
+			_entityId = InternalValidator.CheckUniqueId( entityId );
 		}
 
 		

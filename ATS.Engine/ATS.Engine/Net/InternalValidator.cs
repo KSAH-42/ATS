@@ -6,7 +6,7 @@ namespace ATS.Engine.Net
 {
 	internal static class InternalValidator
 	{
-		public static Guid Validate( Guid uniqueId )
+		public static Guid CheckUniqueId( Guid uniqueId )
 		{
 			if ( uniqueId == Guid.Empty )
 			{
@@ -16,7 +16,7 @@ namespace ATS.Engine.Net
 			return uniqueId;
 		}
 
-		public static string Validate( string text )
+		public static string CheckLoginId( string text )
 		{
 			if ( string.IsNullOrWhiteSpace( text ) )
 			{
@@ -26,7 +26,7 @@ namespace ATS.Engine.Net
 			return text;
 		}
 
-		public static DateTime Validate( DateTime time )
+		public static DateTime CheckTime( DateTime time )
 		{
 			if ( time == DateTime.MinValue || time == DateTime.MaxValue )
 			{
@@ -36,7 +36,25 @@ namespace ATS.Engine.Net
 			return time;
 		}
 
-		public static IEnumerable<TElement> Validate<TElement>( IEnumerable<TElement> elements )
+		public static void CheckTimeRange( DateTime startTime , DateTime endTime )
+		{
+			if ( startTime == DateTime.MinValue || startTime == DateTime.MaxValue )
+			{
+				throw new ValidationException();
+			}
+
+			if ( endTime == DateTime.MinValue || endTime == DateTime.MaxValue )
+			{
+				throw new ValidationException();
+			}
+
+			if ( startTime >= endTime )
+			{
+				throw new ValidationException();
+			}
+		}
+
+		public static IEnumerable<TElement> CheckCollection<TElement>( IEnumerable<TElement> elements )
 		{
 			if ( elements == null || ! elements.Any() )
 			{
@@ -46,7 +64,7 @@ namespace ATS.Engine.Net
 			return elements;
 		}
 
-		public static IReadOnlyCollection<TElement> Validate<TElement>( IReadOnlyCollection<TElement> elements )
+		public static IReadOnlyCollection<TElement> CheckCollection<TElement>( IReadOnlyCollection<TElement> elements )
 		{
 			if ( elements == null || elements.Count == 0 )
 			{
@@ -63,7 +81,7 @@ namespace ATS.Engine.Net
 
 
 
-		public static DOEntity Validate( DOEntity entity )
+		public static DOEntity CheckEntity( DOEntity entity )
 		{
 			if ( null == entity )
 			{
@@ -88,7 +106,7 @@ namespace ATS.Engine.Net
 			return entity;
 		}
 		
-		public static DOTransaction Validate( DOTransaction transaction )
+		public static DOTransaction CheckTransaction( DOTransaction transaction )
 		{
 			if ( null == transaction )
 			{
@@ -118,7 +136,7 @@ namespace ATS.Engine.Net
 			return transaction;
 		}
 
-		public static DOEventRecord Validate( DOEventRecord record )
+		public static DOEventRecord CheckEventRecord( DOEventRecord record )
 		{
 			if ( null == record )
 			{

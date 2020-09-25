@@ -11,7 +11,7 @@ namespace ATS.Engine.Net.Requests
 
 		public ListEventRecordsRequest( IReadOnlyCollection<Guid> records )
 		{
-			_records = InternalValidator.Validate( records );
+			_records = InternalValidator.CheckCollection( records );
 		}
 
 		

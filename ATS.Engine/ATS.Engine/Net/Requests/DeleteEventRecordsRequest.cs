@@ -11,7 +11,7 @@ namespace ATS.Engine.Net.Requests
 
 		public DeleteEventRecordsRequest( IReadOnlyCollection<Guid> entities )
 		{
-			_records = InternalValidator.Validate( entities );
+			_records = InternalValidator.CheckCollection( entities );
 		}
 
 

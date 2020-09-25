@@ -9,7 +9,7 @@ namespace ATS.Engine.Net.Requests
 
 		public SaveEventRecordRequest( DOEventRecord record )
 		{
-			_record = InternalValidator.Validate( record );
+			_record = InternalValidator.CheckEventRecord( record );
 		}
 
 		

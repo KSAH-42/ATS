@@ -11,7 +11,7 @@ namespace ATS.Engine.Net.Requests
 
 		public FindTransactionRequest( Guid transactionId )
 		{
-			_transactionId = InternalValidator.Validate( transactionId );
+			_transactionId = InternalValidator.CheckUniqueId( transactionId );
 		}
 
 		
