@@ -13,7 +13,7 @@ namespace ATS.Engine.Net
 		Setting,
 	}
 
-	public enum EventRecordType
+	public enum EventType
 	{
 		None = 0,
 

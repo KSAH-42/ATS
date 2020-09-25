@@ -2,7 +2,7 @@
 
 namespace ATS.Engine.Net.Requests
 {
-	public sealed class SearchEventRecordsRequest : BaseRequest
+	public sealed class SearchEventsRequest : BaseRequest
 	{
 		private readonly DateTime _startTime          = DateTime.MinValue;
 
@@ -12,7 +12,7 @@ namespace ATS.Engine.Net.Requests
 
 
 
-		public SearchEventRecordsRequest( DateTime startTime , DateTime endTime , int maximumOfResults )
+		public SearchEventsRequest( DateTime startTime , DateTime endTime , int maximumOfResults )
 		{
 			_startTime        = InternalValidator.CheckStartTime( startTime , endTime );
 			_endTime          = InternalValidator.CheckEndTime  ( startTime , endTime );

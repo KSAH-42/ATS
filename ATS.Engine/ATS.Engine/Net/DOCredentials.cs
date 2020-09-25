@@ -4,9 +4,9 @@ namespace ATS.Engine.Net
 {
 	public sealed class DOCredentials : DOValue
 	{
-		private string _loginId  = string.Empty;
+		private string _loginId   = string.Empty;
 
-		private string _password = string.Empty;
+		private string _password  = string.Empty;
 
 
 

@@ -2,12 +2,12 @@
 
 namespace ATS.Engine.Net.Responses
 {
-	public sealed class DeleteEventRecordResponse : BaseResponse
+	public sealed class DeleteEventResponse : BaseResponse
 	{
 		private readonly bool _succeed = false;
 
 
-		public DeleteEventRecordResponse( bool succeed )
+		public DeleteEventResponse( bool succeed )
 		{
 			_succeed = succeed;
 		}

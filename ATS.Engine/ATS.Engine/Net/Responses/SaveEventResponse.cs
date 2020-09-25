@@ -2,12 +2,12 @@
 
 namespace ATS.Engine.Net.Responses
 {
-	public sealed class SaveEventRecordResponse : BaseResponse
+	public sealed class SaveEventResponse : BaseResponse
 	{
 		private readonly bool _succeed = false;
 
 
-		public SaveEventRecordResponse( bool succeed )
+		public SaveEventResponse( bool succeed )
 		{
 			_succeed = succeed;
 		}

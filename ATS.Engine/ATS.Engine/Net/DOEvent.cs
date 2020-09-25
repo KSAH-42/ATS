@@ -2,13 +2,13 @@
 
 namespace ATS.Engine.Net
 {
-	public sealed class DOEventRecord : DORoot
+	public sealed class DOEvent : DORoot
 	{
 		private readonly Guid     _uniqueId         = Guid.Empty;
 
 		private DateTime          _timestamp        = DateTime.MinValue;
 
-		private EventRecordType   _type             = EventRecordType.None;
+		private EventType         _type             = EventType.None;
 
 		private Guid              _applicationId    = Guid.Empty;
 
@@ -20,7 +20,7 @@ namespace ATS.Engine.Net
 
 
 
-		public DOEventRecord( Guid uniqueId )
+		public DOEvent( Guid uniqueId )
 		{
 			_uniqueId = uniqueId;
 		}
@@ -41,7 +41,7 @@ namespace ATS.Engine.Net
 			set => SetField( ref _timestamp , value );
 		}
 
-		public EventRecordType Type
+		public EventType Type
 		{
 			get => GetField( ref _type );
 			set => SetField( ref _type , value );

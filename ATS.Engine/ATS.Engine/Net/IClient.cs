@@ -69,11 +69,11 @@ namespace ATS.Engine.Net
 
 		Task<SaveTransactionResponse> SaveTransactionAsync( SaveTransactionRequest request , CancellationToken cancellationToken );
 
-		SaveEventRecordResponse SaveEventRecord( SaveEventRecordRequest request );
+		SaveEventResponse SaveEvent( SaveEventRequest request );
 
-		Task<SaveEventRecordResponse> SaveEventRecordAsync( SaveEventRecordRequest request );
+		Task<SaveEventResponse> SaveEventAsync( SaveEventRequest request );
 
-		Task<SaveEventRecordResponse> SaveEventRecordAsync( SaveEventRecordRequest request , CancellationToken cancellationToken );
+		Task<SaveEventResponse> SaveEventAsync( SaveEventRequest request , CancellationToken cancellationToken );
 
 		FindEntityResponse FindEntity( FindEntityRequest request );
 
@@ -87,11 +87,11 @@ namespace ATS.Engine.Net
 
 		Task<FindTransactionResponse> FindTransactionAsync( FindTransactionRequest request , CancellationToken cancellationToken );
 
-		FindEventRecordResponse FindEventRecord( FindEventRecordRequest request );
+		FindEventResponse FindEvent( FindEventRequest request );
 
-		Task<FindEventRecordResponse> FindEventRecordAsync( FindEventRecordRequest request );
+		Task<FindEventResponse> FindEventAsync( FindEventRequest request );
 
-		Task<FindEventRecordResponse> FindEventRecordAsync( FindEventRecordRequest request , CancellationToken cancellationToken );
+		Task<FindEventResponse> FindEventAsync( FindEventRequest request , CancellationToken cancellationToken );
 
 		ListEntitiesResponse ListEntities();
 
@@ -117,17 +117,17 @@ namespace ATS.Engine.Net
 
 		Task<ListTransactionsResponse> ListTransactionsAsync( ListTransactionsRequest request , CancellationToken cancellationToken );
 
-		ListEventRecordsResponse ListEventRecords();
+		ListEventsResponse ListEvents();
 
-		Task<ListEventRecordsResponse> ListEventRecordsAsync();
+		Task<ListEventsResponse> ListEventsAsync();
 
-		Task<ListEventRecordsResponse> ListEventRecordsAsync( CancellationToken cancellationToken );
+		Task<ListEventsResponse> ListEventsAsync( CancellationToken cancellationToken );
 
-		ListEventRecordsResponse ListEventRecords( ListEventRecordsRequest request );
+		ListEventsResponse ListEvents( ListEventsRequest request );
 
-		Task<ListEventRecordsResponse> ListEventRecordsAsync( ListEventRecordsRequest request );
+		Task<ListEventsResponse> ListEventsAsync( ListEventsRequest request );
 
-		Task<ListEventRecordsResponse> ListEventRecordsAsync( ListEventRecordsRequest request , CancellationToken cancellationToken );
+		Task<ListEventsResponse> ListEventsAsync( ListEventsRequest request , CancellationToken cancellationToken );
 
 		DeleteEntityResponse DeleteEntity( DeleteEntityRequest request );
 
@@ -141,11 +141,11 @@ namespace ATS.Engine.Net
 
 		Task<DeleteTransactionResponse> DeleteTransactionAsync( DeleteTransactionRequest request , CancellationToken cancellationToken );
 
-		DeleteEventRecordResponse DeleteEventRecord( DeleteEventRecordRequest request );
+		DeleteEventResponse DeleteEvent( DeleteEventRequest request );
 
-		Task<DeleteEventRecordResponse> DeleteEventRecordAsync( DeleteEventRecordRequest request );
+		Task<DeleteEventResponse> DeleteEventAsync( DeleteEventRequest request );
 
-		Task<DeleteEventRecordResponse> DeleteEventRecordAsync( DeleteEventRecordRequest request , CancellationToken cancellationToken );
+		Task<DeleteEventResponse> DeleteEventAsync( DeleteEventRequest request , CancellationToken cancellationToken );
 
 		DeleteEntitiesResponse DeleteEntities();
 
@@ -171,17 +171,17 @@ namespace ATS.Engine.Net
 
 		Task<DeleteTransactionsResponse> DeleteTransactionsAsync( DeleteTransactionsRequest request , CancellationToken cancellationToken );
 
-		DeleteEventRecordsResponse DeleteEventRecords();
+		DeleteEventsResponse DeleteEvents();
 
-		Task<DeleteEventRecordsResponse> DeleteEventRecordsAsync();
+		Task<DeleteEventsResponse> DeleteEventsAsync();
 
-		Task<DeleteEventRecordsResponse> DeleteEventRecordsAsync( CancellationToken cancellationToken );
+		Task<DeleteEventsResponse> DeleteEventsAsync( CancellationToken cancellationToken );
 
-		DeleteEventRecordsResponse DeleteEventRecords( DeleteEventRecordsRequest request );
+		DeleteEventsResponse DeleteEvents( DeleteEventsRequest request );
 
-		Task<DeleteEventRecordsResponse> DeleteEventRecordsAsync( DeleteEventRecordsRequest request );
+		Task<DeleteEventsResponse> DeleteEventsAsync( DeleteEventsRequest request );
 
-		Task<DeleteEventRecordsResponse> DeleteEventRecordsAsync( DeleteEventRecordsRequest request , CancellationToken cancellationToken );
+		Task<DeleteEventsResponse> DeleteEventsAsync( DeleteEventsRequest request , CancellationToken cancellationToken );
 
 		SearchTransactionsResponse SearchTransactions( SearchTransactionsRequest request );
 
@@ -189,11 +189,11 @@ namespace ATS.Engine.Net
 
 		Task<SearchTransactionsResponse> SearchTransactionsAsync( SearchTransactionsRequest request , CancellationToken cancellationToken );
 
-		SearchEventRecordsResponse SearchEventRecords( SearchEventRecordsRequest request );
+		SearchEventsResponse SearchEvents( SearchEventsRequest request );
 
-		Task<SearchEventRecordsResponse> SearchEventRecordsAsync( SearchEventRecordsRequest request );
+		Task<SearchEventsResponse> SearchEventsAsync( SearchEventsRequest request );
 
-		Task<SearchEventRecordsResponse> SearchEventRecordsAsync( SearchEventRecordsRequest request , CancellationToken cancellationToken );
+		Task<SearchEventsResponse> SearchEventsAsync( SearchEventsRequest request , CancellationToken cancellationToken );
 
 		OpenAccountResponse OpenAccount( OpenAccountRequest request );
 

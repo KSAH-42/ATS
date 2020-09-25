@@ -178,34 +178,34 @@ namespace ATS.Engine.Net
 			return transaction;
 		}
 
-		public static DOEventRecord CheckEventRecord( DOEventRecord record )
+		public static DOEvent CheckEvent( DOEvent @event )
 		{
-			if ( null == record )
+			if ( null == @event )
 			{
 				throw new ValidationException();
 			}
 
-			if ( record.UniqueId == Guid.Empty )
+			if ( @event.UniqueId == Guid.Empty )
 			{
 				throw new ValidationException();
 			}
 
-			if ( record.ApplicationId == Guid.Empty )
+			if ( @event.ApplicationId == Guid.Empty )
 			{
 				throw new ValidationException();
 			}
 
-			if ( record.Type <= 0 )
+			if ( @event.Type <= 0 )
 			{
 				throw new ValidationException();
 			}
 
-			if ( record.TimeStamp == DateTime.MinValue || record.TimeStamp == DateTime.MaxValue )
+			if ( @event.TimeStamp == DateTime.MinValue || @event.TimeStamp == DateTime.MaxValue )
 			{
 				throw new ValidationException();
 			}
 
-			return record;
+			return @event;
 		}
 
 
