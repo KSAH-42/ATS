@@ -11,7 +11,7 @@ namespace ATS.Engine.Net.Requests
 
 		public FindEntityRequest( Guid entityId )
 		{
-			_entityId = entityId;
+			_entityId = InternalValidator.Validate( entityId );
 		}
 
 		
@@ -22,12 +22,5 @@ namespace ATS.Engine.Net.Requests
 			get => _entityId;
 		}
 
-
-
-
-		public override bool Validate()
-		{
-			return _entityId != Guid.Empty;
-		}
 	}
 }

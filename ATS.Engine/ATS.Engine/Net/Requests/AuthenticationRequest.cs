@@ -13,8 +13,8 @@ namespace ATS.Engine.Net.Requests
 
 		public AuthenticationRequest( string loginId , string password )
 		{
-			_loginId = loginId ?? string.Empty;
-			_password= password?? string.Empty;
+			_loginId  = InternalValidator.Validate( loginId ) ?? string.Empty;
+			_password = password ?? string.Empty;
 		}
 	
 
@@ -28,14 +28,6 @@ namespace ATS.Engine.Net.Requests
 		public string Password
 		{
 			get => _password;
-		}
-
-
-
-
-		public override bool Validate()
-		{
-			return ! string.IsNullOrWhiteSpace( _loginId );
 		}
 	}
 }

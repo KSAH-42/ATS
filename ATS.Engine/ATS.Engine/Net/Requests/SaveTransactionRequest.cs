@@ -9,7 +9,7 @@ namespace ATS.Engine.Net.Requests
 
 		public SaveTransactionRequest( DOTransaction transaction )
 		{
-			_transaction = transaction;
+			_transaction = InternalValidator.Validate( transaction );
 		}
 
 		
@@ -21,11 +21,5 @@ namespace ATS.Engine.Net.Requests
 		}
 
 
-
-
-		public override bool Validate()
-		{
-			return _transaction.UniqueId != Guid.Empty;
-		}
 	}
 }

@@ -11,9 +11,9 @@ namespace ATS.Engine.Net.Requests
 
 
 
-		public DeleteTransactionsRequest( IReadOnlyCollection<Guid> entities )
+		public DeleteTransactionsRequest( IReadOnlyCollection<Guid> trannsactions )
 		{
-			_transactions = entities ?? throw new ArgumentNullException( nameof( entities ) );
+			_transactions = InternalValidator.Validate( trannsactions );
 		}
 
 
@@ -24,12 +24,5 @@ namespace ATS.Engine.Net.Requests
 			get => _transactions;
 		}
 
-
-
-
-		public override bool Validate()
-		{
-			return _transactions.Any();
-		}
 	}
 }

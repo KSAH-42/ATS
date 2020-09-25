@@ -45,7 +45,8 @@
     <Compile Include="Net\HandlerList.cs" />
     <Compile Include="Net\Handlers\NullHandler.cs" />
     <Compile Include="Net\IClient.cs" />
-    <Compile Include="Net\InvalidRequestException.cs" />
+    <Compile Include="Net\InternalValidator.cs" />
+    <Compile Include="Net\ValidationException.cs" />
     <Compile Include="Net\IResponse.cs" />
     <Compile Include="Net\IRequest.cs" />
     <Compile Include="Net\DOAccount.cs" />

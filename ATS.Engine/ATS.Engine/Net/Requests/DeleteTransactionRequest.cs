@@ -10,7 +10,7 @@ namespace ATS.Engine.Net.Requests
 
 		public DeleteTransactionRequest( Guid transactionId )
 		{
-			_transactionId = transactionId;
+			_transactionId = InternalValidator.Validate( transactionId );
 		}
 	
 
@@ -21,12 +21,5 @@ namespace ATS.Engine.Net.Requests
 			get => _transactionId;
 		}
 
-
-
-
-		public override bool Validate()
-		{
-			return _transactionId != Guid.Empty;
-		}
 	}
 }

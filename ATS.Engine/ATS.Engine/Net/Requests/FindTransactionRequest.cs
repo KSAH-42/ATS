@@ -11,7 +11,7 @@ namespace ATS.Engine.Net.Requests
 
 		public FindTransactionRequest( Guid transactionId )
 		{
-			_transactionId = transactionId;
+			_transactionId = InternalValidator.Validate( transactionId );
 		}
 
 		
@@ -23,11 +23,5 @@ namespace ATS.Engine.Net.Requests
 		}
 
 
-
-
-		public override bool Validate()
-		{
-			return _transactionId != Guid.Empty;
-		}
 	}
 }

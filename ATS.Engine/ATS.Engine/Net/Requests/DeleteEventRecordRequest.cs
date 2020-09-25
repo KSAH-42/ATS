@@ -10,7 +10,7 @@ namespace ATS.Engine.Net.Requests
 
 		public DeleteEventRecordRequest( Guid recordId )
 		{
-			_recordId = recordId;
+			_recordId = InternalValidator.Validate( recordId );
 		}
 	
 
@@ -21,12 +21,5 @@ namespace ATS.Engine.Net.Requests
 			get => _recordId;
 		}
 
-
-
-
-		public override bool Validate()
-		{
-			return _recordId != Guid.Empty;
-		}
 	}
 }

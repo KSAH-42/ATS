@@ -11,7 +11,7 @@ namespace ATS.Engine.Net.Requests
 
 		public DeleteEntitiesRequest( IReadOnlyCollection<Guid> entities )
 		{
-			_entities = entities ?? throw new ArgumentNullException( nameof( entities ) );
+			_entities = InternalValidator.Validate<Guid>( entities );
 		}
 
 		
@@ -22,12 +22,5 @@ namespace ATS.Engine.Net.Requests
 			get => _entities;
 		}
 
-
-
-
-		public override bool Validate()
-		{
-			return _entities.Any();
-		}
 	}
 }

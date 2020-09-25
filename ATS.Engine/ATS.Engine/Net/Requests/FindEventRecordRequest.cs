@@ -11,7 +11,7 @@ namespace ATS.Engine.Net.Requests
 
 		public FindEventRecordRequest( Guid recordId )
 		{
-			_recordId = recordId;
+			_recordId = InternalValidator.Validate( recordId );
 		}
 
 		
@@ -23,11 +23,5 @@ namespace ATS.Engine.Net.Requests
 		}
 
 
-
-
-		public override bool Validate()
-		{
-			return _recordId != Guid.Empty;
-		}
 	}
 }

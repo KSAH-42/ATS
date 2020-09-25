@@ -9,7 +9,7 @@ namespace ATS.Engine.Net.Requests
 
 		public SaveEntityRequest( DOEntity entity )
 		{
-			_entity = entity ?? throw new ArgumentNullException( nameof( entity ) );
+			_entity = InternalValidator.Validate( entity );
 		}
 
 		
@@ -21,11 +21,5 @@ namespace ATS.Engine.Net.Requests
 		}
 
 
-
-
-		public override bool Validate()
-		{
-			return _entity.UniqueId != Guid.Empty;
-		}
 	}
 }

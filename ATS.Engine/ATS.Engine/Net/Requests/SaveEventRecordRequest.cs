@@ -9,7 +9,7 @@ namespace ATS.Engine.Net.Requests
 
 		public SaveEventRecordRequest( DOEventRecord record )
 		{
-			_record = record;
+			_record = InternalValidator.Validate( record );
 		}
 
 		
@@ -21,11 +21,5 @@ namespace ATS.Engine.Net.Requests
 		}
 
 
-
-
-		public override bool Validate()
-		{
-			return _record.UniqueId != Guid.Empty;
-		}
 	}
 }

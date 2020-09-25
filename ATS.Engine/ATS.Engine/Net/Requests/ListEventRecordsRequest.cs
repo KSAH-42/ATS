@@ -11,7 +11,7 @@ namespace ATS.Engine.Net.Requests
 
 		public ListEventRecordsRequest( IReadOnlyCollection<Guid> records )
 		{
-			_records = records ?? throw new ArgumentNullException( nameof( records ) );
+			_records = InternalValidator.Validate( records );
 		}
 
 		
@@ -23,11 +23,5 @@ namespace ATS.Engine.Net.Requests
 		}
 
 
-
-
-		public override bool Validate()
-		{
-			return _records.Any();
-		}
 	}
 }

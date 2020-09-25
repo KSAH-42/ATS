@@ -11,7 +11,7 @@ namespace ATS.Engine.Net.Requests
 
 		public ListTransactionsRequest( IReadOnlyCollection<Guid> transactions )
 		{
-			_transactions = transactions ?? throw new ArgumentNullException( nameof( transactions ) );
+			_transactions = InternalValidator.Validate( transactions );
 		}
 
 		
@@ -23,11 +23,5 @@ namespace ATS.Engine.Net.Requests
 		}
 
 
-
-
-		public override bool Validate()
-		{
-			return _transactions.Any();
-		}
 	}
 }
