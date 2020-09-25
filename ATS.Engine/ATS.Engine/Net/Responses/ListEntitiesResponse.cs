@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace ATS.Engine.Net.Responses
 {
-	public sealed class ListAllEntitiesResponse : BaseResponse
+	public sealed class ListEntitiesResponse : BaseResponse
 	{
 		private readonly IList<DOEntity> _entities = null;
 
 
-		public ListAllEntitiesResponse( IList<DOEntity> entities )
+		public ListEntitiesResponse( IList<DOEntity> entities )
 		{
 			_entities = entities ?? throw new ArgumentNullException( nameof( entities ) );
 		}

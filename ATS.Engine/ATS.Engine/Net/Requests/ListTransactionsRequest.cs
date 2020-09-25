@@ -4,12 +4,12 @@ using System.Collections.Generic;
 
 namespace ATS.Engine.Net.Requests
 {
-	public sealed class ListAllTransactionsRequest : BaseRequest
+	public sealed class ListTransactionsRequest : BaseRequest
 	{
 		private readonly IReadOnlyCollection<Guid> _transactions = null;
 
 
-		public ListAllTransactionsRequest( IReadOnlyCollection<Guid> transactions )
+		public ListTransactionsRequest( IReadOnlyCollection<Guid> transactions )
 		{
 			_transactions = transactions ?? throw new ArgumentNullException( nameof( transactions ) );
 		}

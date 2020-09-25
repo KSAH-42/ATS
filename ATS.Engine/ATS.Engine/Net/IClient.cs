@@ -58,29 +58,29 @@ namespace ATS.Engine.Net
 
 		Task<GetEntityResponse> GetEntityAsync( GetEntityRequest request );
 
-		ListAllEntitiesResponse ListAllEntities();
+		ListEntitiesResponse ListEntities();
 
-		Task<ListAllEntitiesResponse> ListAllEntitiesAsync();
+		Task<ListEntitiesResponse> ListEntitiesAsync();
 
-		ListAllEntitiesResponse ListAllEntities( ListAllEntitiesRequest request );
+		ListEntitiesResponse ListEntities( ListEntitiesRequest request );
 
-		Task<ListAllEntitiesResponse> ListAllEntitiesAsync( ListAllEntitiesRequest request );
+		Task<ListEntitiesResponse> ListEntitiesAsync( ListEntitiesRequest request );
 
-		ListAllTransactionsResponse ListAllTransactions();
+		ListTransactionsResponse ListTransactions();
 
-		Task<ListAllTransactionsResponse> ListAllTransactionsAsync();
+		Task<ListTransactionsResponse> ListTransactionsAsync();
 
-		ListAllTransactionsResponse ListAllTransactions( ListAllTransactionsRequest request );
+		ListTransactionsResponse ListTransactions( ListTransactionsRequest request );
 
-		Task<ListAllTransactionsResponse> ListAllTransactionsAsync( ListAllTransactionsRequest request );
+		Task<ListTransactionsResponse> ListTransactionsAsync( ListTransactionsRequest request );
 
-		ListAllEventRecordsResponse ListAllEventRecords();
+		ListEventRecordsResponse ListEventRecords();
 
-		Task<ListAllEventRecordsResponse> ListAllEventRecordsAsync();
+		Task<ListEventRecordsResponse> ListEventRecordsAsync();
 
-		ListAllEventRecordsResponse ListAllEventRecords( ListAllEventRecordsRequest request );
+		ListEventRecordsResponse ListEventRecords( ListEventRecordsRequest request );
 
-		Task<ListAllEventRecordsResponse> ListAllEventRecordsAsync( ListAllEventRecordsRequest request );
+		Task<ListEventRecordsResponse> ListEventRecordsAsync( ListEventRecordsRequest request );
 
 		DeleteEntityResponse DeleteEntity( DeleteEntityRequest request );
 

@@ -41,11 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Net\BadRequestException.cs" />
     <Compile Include="Net\Enums.cs" />
     <Compile Include="Net\HandlerList.cs" />
     <Compile Include="Net\Handlers\NullHandler.cs" />
     <Compile Include="Net\IClient.cs" />
+    <Compile Include="Net\InvalidRequestException.cs" />
     <Compile Include="Net\IResponse.cs" />
     <Compile Include="Net\IRequest.cs" />
     <Compile Include="Net\DOAccount.cs" />
@@ -72,9 +72,6 @@
     <Compile Include="Net\Permission.cs" />
     <Compile Include="Net\PermissionReadOnlyList.cs" />
     <Compile Include="Net\PermissionList.cs" />
-    <Compile Include="Net\Requests\ListAllEventRecordsRequest.cs" />
-    <Compile Include="Net\Requests\ListAllTransactionsRequest.cs" />
-    <Compile Include="Net\Requests\ListAllEntitiesRequest.cs" />
     <Compile Include="Net\Requests\DeleteAllEventRecordsRequest.cs" />
     <Compile Include="Net\Requests\DeleteAllTransactionsRequest.cs" />
     <Compile Include="Net\Requests\DeleteAllEntitiesRequest.cs" />
@@ -82,10 +79,10 @@
     <Compile Include="Net\Requests\DeleteTransactionRequest.cs" />
     <Compile Include="Net\Requests\DeleteEntityRequest.cs" />
     <Compile Include="Net\Requests\GetEntityRequest.cs" />
+    <Compile Include="Net\Requests\ListEntitiesRequest.cs" />
+    <Compile Include="Net\Requests\ListEventRecordsRequest.cs" />
+    <Compile Include="Net\Requests\ListTransactionsRequest.cs" />
     <Compile Include="Net\Responses\GetEntityResponse.cs" />
-    <Compile Include="Net\Responses\ListAllEventRecordsResponse.cs" />
-    <Compile Include="Net\Responses\ListAllTransactionsResponse.cs" />
-    <Compile Include="Net\Responses\ListAllEntitiesResponse.cs" />
     <Compile Include="Net\Responses\DeleteAllEventRecordsResponse.cs" />
     <Compile Include="Net\Responses\DeleteAllTransactionsResponse.cs" />
     <Compile Include="Net\Responses\DeleteAllEntitiesResponse.cs" />
@@ -96,6 +93,9 @@
     <Compile Include="Net\Responses\BaseResponse.cs" />
     <Compile Include="Net\Requests\AuthenticationRequest.cs" />
     <Compile Include="Net\Requests\BaseRequest.cs" />
+    <Compile Include="Net\Responses\ListEntitiesResponse.cs" />
+    <Compile Include="Net\Responses\ListEventRecordsResponse.cs" />
+    <Compile Include="Net\Responses\ListTransactionsResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
