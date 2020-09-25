@@ -138,5 +138,33 @@ namespace ATS.Engine.Net
 		DeleteEventRecordsResponse DeleteEventRecords( DeleteEventRecordsRequest request );
 
 		Task<DeleteEventRecordsResponse> DeleteEventRecordsAsync( DeleteEventRecordsRequest request , CancellationToken cancellationToken );
+
+		OpenAccountResponse OpenAccount( OpenAccountRequest request );
+
+		Task<OpenAccountResponse> OpenAccountAsync( OpenAccountRequest request , CancellationToken cancellationToken );
+
+		ReOpenAccountResponse ReOpenAccount( ReOpenAccountRequest request );
+
+		Task<ReOpenAccountResponse> ReOpenAccountAsync( ReOpenAccountRequest request , CancellationToken cancellationToken );
+
+		CloseAccountResponse CloseAccount( CloseAccountResponse request );
+
+		Task<CloseAccountResponse> CloseAccount( CloseAccountRequest request , CancellationToken cancellationToken );
+
+		DepositResponse	Deposit( DepositRequest request );
+
+		Task<DepositResponse> DepositAsync( DepositRequest request , CancellationToken cancellationToken );
+
+		WithdrawResponse Withdraw( WithdrawRequest request );
+
+		Task<WithdrawResponse> WithdrawAsync( WithdrawRequest request , CancellationToken cancellationToken );
+
+		EnableCardResponse EnableCard( EnableCardRequest request );
+
+		Task<EnableCardResponse> EnableCardAsync( EnableCardRequest request , CancellationToken cancellationToken );
+
+		DisableCardResponse DisableCard( DisableCardRequest request );
+
+		Task<DisableCardResponse> DisableCardAsync( DisableCardRequest request , CancellationToken cancellationToken );
 	}
 }

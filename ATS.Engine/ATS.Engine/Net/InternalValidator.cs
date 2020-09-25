@@ -16,6 +16,16 @@ namespace ATS.Engine.Net
 			return uniqueId;
 		}
 
+		public static decimal CheckAmount( decimal price )
+		{
+			if ( price >= 0 )
+			{
+				throw new ValidationException();
+			}
+
+			return price;
+		}
+
 		public static string CheckLoginId( string text )
 		{
 			if ( string.IsNullOrWhiteSpace( text ) )
