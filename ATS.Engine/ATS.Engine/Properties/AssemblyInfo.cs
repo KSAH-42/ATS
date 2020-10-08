@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Les informations générales relatives à un assembly dépendent de
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
-[assembly: AssemblyTitle("ATS.Engine")]
+[assembly: AssemblyTitle( "ATS.Client" )]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("HP Inc.")]
-[assembly: AssemblyProduct("ATS.Engine")]
+[assembly: AssemblyProduct( "ATS.Client" )]
 [assembly: AssemblyCopyright("Copyright © HP Inc. 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

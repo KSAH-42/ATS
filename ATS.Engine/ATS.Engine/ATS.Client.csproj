@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D3726A74-A85B-4D95-A45C-03F3A3E659C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ATS.Client</RootNamespace>
+    <AssemblyName>ATS.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DOUser.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="HandlerList.cs" />
+    <Compile Include="Handlers\NullHandler.cs" />
+    <Compile Include="IClient.cs" />
+    <Compile Include="InternalValidator.cs" />
+    <Compile Include="PermissionManager.cs" />
+    <Compile Include="Requests\SearchEventsRequest.cs" />
+    <Compile Include="Requests\SearchTransactionsRequest.cs" />
+    <Compile Include="Requests\DisableCardRequest.cs" />
+    <Compile Include="Requests\EnableCardRequest.cs" />
+    <Compile Include="Requests\WithdrawRequest.cs" />
+    <Compile Include="Requests\DepositRequest.cs" />
+    <Compile Include="Requests\ReOpenAccountRequest.cs" />
+    <Compile Include="Requests\CloseAccountRequest.cs" />
+    <Compile Include="Requests\OpenAccountRequest.cs" />
+    <Compile Include="Responses\CloseAccountResponse.cs" />
+    <Compile Include="Responses\DisableCardResponse.cs" />
+    <Compile Include="Responses\EnableCardResponse.cs" />
+    <Compile Include="Responses\SearchTransactionsResponse.cs" />
+    <Compile Include="Responses\SearchEventsResponse.cs" />
+    <Compile Include="Responses\WithdrawResponse.cs" />
+    <Compile Include="Responses\DepositResponse.cs" />
+    <Compile Include="Responses\ReOpenAccountResponse.cs" />
+    <Compile Include="Responses\OpenAccountResponse.cs" />
+    <Compile Include="PermissionException.cs" />
+    <Compile Include="PingException.cs" />
+    <Compile Include="ValidationException.cs" />
+    <Compile Include="IResponse.cs" />
+    <Compile Include="IRequest.cs" />
+    <Compile Include="DOAccount.cs" />
+    <Compile Include="DOAdviser.cs" />
+    <Compile Include="DOCache.cs" />
+    <Compile Include="Handlers\Handler.cs" />
+    <Compile Include="IHandler.cs" />
+    <Compile Include="DOUniqueIdList.cs" />
+    <Compile Include="DOCard.cs" />
+    <Compile Include="DOAddress.cs" />
+    <Compile Include="DOContacts.cs" />
+    <Compile Include="DOPersonalInfos.cs" />
+    <Compile Include="DOCredentials.cs" />
+    <Compile Include="DOCustomer.cs" />
+    <Compile Include="DOEntity.cs" />
+    <Compile Include="DOEvent.cs" />
+    <Compile Include="DOPropertyChangingEventArgs.cs" />
+    <Compile Include="DOPropertyChangedEventArgs.cs" />
+    <Compile Include="DOReadOnlyCache.cs" />
+    <Compile Include="DOValue.cs" />
+    <Compile Include="DORoot.cs" />
+    <Compile Include="DOSetting.cs" />
+    <Compile Include="DOTransaction.cs" />
+    <Compile Include="Permission.cs" />
+    <Compile Include="PermissionReadOnlyList.cs" />
+    <Compile Include="PermissionList.cs" />
+    <Compile Include="Requests\DeleteEventsRequest.cs" />
+    <Compile Include="Requests\DeleteTransactionsRequest.cs" />
+    <Compile Include="Requests\DeleteEntitiesRequest.cs" />
+    <Compile Include="Requests\DeleteEventRequest.cs" />
+    <Compile Include="Requests\DeleteTransactionRequest.cs" />
+    <Compile Include="Requests\DeleteEntityRequest.cs" />
+    <Compile Include="Requests\SaveEventRequest.cs" />
+    <Compile Include="Requests\SaveTransactionRequest.cs" />
+    <Compile Include="Requests\SaveEntityRequest.cs" />
+    <Compile Include="Requests\FindEntityRequest.cs" />
+    <Compile Include="Requests\FindEventRequest.cs" />
+    <Compile Include="Requests\FindTransactionRequest.cs" />
+    <Compile Include="Requests\ListEntitiesRequest.cs" />
+    <Compile Include="Requests\ListEventsRequest.cs" />
+    <Compile Include="Requests\ListTransactionsRequest.cs" />
+    <Compile Include="Responses\SaveEventResponse.cs" />
+    <Compile Include="Responses\SaveTransactionResponse.cs" />
+    <Compile Include="Responses\SaveEntityResponse.cs" />
+    <Compile Include="Responses\FindEventResponse.cs" />
+    <Compile Include="Responses\FindTransactionResponse.cs" />
+    <Compile Include="Responses\FindEntityResponse.cs" />
+    <Compile Include="Responses\DeleteEventsResponse.cs" />
+    <Compile Include="Responses\DeleteTransactionsResponse.cs" />
+    <Compile Include="Responses\DeleteEntitiesResponse.cs" />
+    <Compile Include="Responses\DeleteEventResponse.cs" />
+    <Compile Include="Responses\DeleteTransactionResponse.cs" />
+    <Compile Include="Responses\DeleteEntityResponse.cs" />
+    <Compile Include="Responses\AuthenticationResponse.cs" />
+    <Compile Include="Responses\BaseResponse.cs" />
+    <Compile Include="Requests\AuthenticationRequest.cs" />
+    <Compile Include="Requests\BaseRequest.cs" />
+    <Compile Include="Responses\ListEntitiesResponse.cs" />
+    <Compile Include="Responses\ListEventsResponse.cs" />
+    <Compile Include="Responses\ListTransactionsResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

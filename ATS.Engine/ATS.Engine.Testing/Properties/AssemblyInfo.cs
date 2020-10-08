@@ -2,11 +2,11 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle( "ATS.Engine.Testing" )]
+[assembly: AssemblyTitle( "ATS.Client.Testing" )]
 [assembly: AssemblyDescription( "" )]
 [assembly: AssemblyConfiguration( "" )]
 [assembly: AssemblyCompany( "HP Inc." )]
-[assembly: AssemblyProduct( "ATS.Engine.Testing" )]
+[assembly: AssemblyProduct( "ATS.Client.Testing" )]
 [assembly: AssemblyCopyright( "Copyright © HP Inc. 2020" )]
 [assembly: AssemblyTrademark( "" )]
 [assembly: AssemblyCulture( "" )]
