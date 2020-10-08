@@ -16,7 +16,7 @@ namespace ATS.Client
 
 		public static void CheckUniqueId( params Guid[] ids )
 		{
-			if ( null == ids || 0 >= ids.Length )
+			if ( ids == null || ids.Length == 0 )
 			{
 				throw new ValidationException();
 			}
