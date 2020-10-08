@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATS.Client", "ATS.Engine\ATS.Client.csproj", "{D3726A74-A85B-4D95-A45C-03F3A3E659C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATS.Client", "ATS.Client\ATS.Client.csproj", "{D3726A74-A85B-4D95-A45C-03F3A3E659C3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATS.Testing", "ATS.Testing\ATS.Testing.csproj", "{DBED047D-CAFC-46FB-A458-8B5E5536BD4C}"
 EndProject
