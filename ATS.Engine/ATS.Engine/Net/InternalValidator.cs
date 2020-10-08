@@ -20,13 +20,10 @@ namespace ATS.Engine.Net
 			{
 				throw new ValidationException();
 			}
-
-			foreach ( var id in ids )
+			
+			if ( ids.Any( element => element == Guid.Empty ) )
 			{
-				if ( id == Guid.Empty )
-				{
-					throw new ValidationException();
-				}
+				throw new ValidationException();
 			}
 		}
 
