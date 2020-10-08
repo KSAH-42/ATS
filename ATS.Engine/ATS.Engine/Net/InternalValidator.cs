@@ -32,7 +32,7 @@ namespace ATS.Engine.Net
 
 		public static void CheckAmount( decimal price )
 		{
-			if ( price >= 0 )
+			if ( price <= 0 )
 			{
 				throw new ValidationException();
 			}
