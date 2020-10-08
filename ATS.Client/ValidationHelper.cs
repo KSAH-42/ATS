@@ -43,6 +43,14 @@ namespace ATS.Client
 			}
 		}
 
+		public static void CheckLogin( string loginId , string password )
+		{
+			if ( string.IsNullOrWhiteSpace( loginId ) || string.IsNullOrWhiteSpace( password ) )
+			{
+				throw new ValidationException();
+			}
+		}
+
 		public static void CheckTime( DateTime time )
 		{
 			if ( time == DateTime.MinValue || time == DateTime.MaxValue )
