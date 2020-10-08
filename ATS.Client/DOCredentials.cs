@@ -13,13 +13,13 @@ namespace ATS.Client
 		public string LoginId
 		{
 			get => GetField( ref _loginId );
-			set => SetField( ref _loginId , value ?? string.Empty );
+			set => SetField( ref _loginId , ValueFilter.Filter( value ) );
 		}
 
 		public string Password
 		{
 			get => GetField( ref _password );
-			set => SetField( ref _password , value ?? string.Empty );
+			set => SetField( ref _password , ValueFilter.Filter( value ) );
 		}
 
 	}

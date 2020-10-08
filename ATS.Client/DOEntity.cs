@@ -55,19 +55,19 @@ namespace ATS.Client
 		public string Name
 		{
 			get => GetField( ref _name );
-			set => SetField( ref _name , value ?? string.Empty );
+			set => SetField( ref _name , ValueFilter.Filter( value ) );
 		}
 
 		public string Description
 		{
 			get => GetField( ref _description );
-			set => SetField( ref _description , value ?? string.Empty );
+			set => SetField( ref _description , ValueFilter.Filter( value ) );
 		}
 
 		public string Comments
 		{
 			get => GetField( ref _comments );
-			set => SetField( ref _comments , value ?? string.Empty );
+			set => SetField( ref _comments , ValueFilter.Filter( value ) );
 		}
 
 		public int SubType

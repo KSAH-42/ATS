@@ -56,7 +56,7 @@ namespace ATS.Client
 
 
 
-		protected TValue GetField<TValue>( ref TValue memberValue , [CallerMemberName] string propertyName = null )
+		protected virtual TValue GetField<TValue>( ref TValue memberValue , [CallerMemberName] string propertyName = null )
 		{
 			if ( string.IsNullOrWhiteSpace( propertyName ) )
 			{
@@ -69,7 +69,7 @@ namespace ATS.Client
 			}
 		}
 
-		protected void SetField<TValue>( ref TValue memberValue , TValue value , [CallerMemberName] string propertyName = null )
+		protected virtual void SetField<TValue>( ref TValue memberValue , TValue value , [CallerMemberName] string propertyName = null )
 		{
 			if ( string.IsNullOrWhiteSpace( propertyName ) )
 			{

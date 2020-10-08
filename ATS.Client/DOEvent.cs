@@ -8,7 +8,7 @@ namespace ATS.Client
 
 		private DateTime          _timestamp        = DateTime.MinValue;
 
-		private DOEventType         _type             = DOEventType.None;
+		private DOEventType       _type             = DOEventType.None;
 
 		private Guid              _applicationId    = Guid.Empty;
 
@@ -62,7 +62,7 @@ namespace ATS.Client
 		public string Data
 		{
 			get => GetField( ref _data );
-			set => SetField( ref _data , value ?? string.Empty );
+			set => SetField( ref _data , ValueFilter.Filter( value ) );
 		}
 
 	}

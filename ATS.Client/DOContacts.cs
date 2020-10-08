@@ -19,25 +19,25 @@ namespace ATS.Client
 		public string Phone
 		{
 			get => GetField( ref _phone );
-			set => SetField( ref _phone , value ?? string.Empty );
+			set => SetField( ref _phone , ValueFilter.Filter( value ) );
 		}
 
 		public string Mobile
 		{
 			get => GetField( ref _mobile );
-			set => SetField( ref _mobile , value ?? string.Empty );
+			set => SetField( ref _mobile , ValueFilter.Filter( value ) );
 		}
 
 		public string Fax
 		{
 			get => GetField( ref _fax );
-			set => SetField( ref _fax , value ?? string.Empty );
+			set => SetField( ref _fax , ValueFilter.Filter( value ) );
 		}
 
 		public string Email
 		{
 			get => GetField( ref _email );
-			set => SetField( ref _email , value ?? string.Empty );
+			set => SetField( ref _email , ValueFilter.Filter( value ) );
 		}
 
 	}
