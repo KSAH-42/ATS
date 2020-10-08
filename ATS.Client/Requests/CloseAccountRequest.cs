@@ -13,7 +13,7 @@ namespace ATS.Client.Requests
 
 		public CloseAccountRequest( Guid customerId , Guid accountId )
 		{
-			InternalValidator.CheckUniqueId( customerId , accountId );
+			ValidationHelper.CheckUniqueId( customerId , accountId );
 			
 			_customerId  = customerId;
 			_accountId   = accountId;

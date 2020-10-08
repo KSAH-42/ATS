@@ -11,7 +11,7 @@ namespace ATS.Client.Requests
 
 		public SaveEventRequest( DOEvent @event )
 		{
-			InternalValidator.CheckEvent( @event );
+			ValidationHelper.CheckEvent( @event );
 
 			_event = @event;
 		}

@@ -15,8 +15,8 @@ namespace ATS.Client.Requests
 
 		public DepositRequest( Guid customerId , Guid accountId , decimal amount )
 		{
-			InternalValidator.CheckUniqueId( customerId , accountId );
-			InternalValidator.CheckAmount( amount );
+			ValidationHelper.CheckUniqueId( customerId , accountId );
+			ValidationHelper.CheckAmount( amount );
 
 			_customerId  = customerId ;
 			_accountId   = accountId  ;

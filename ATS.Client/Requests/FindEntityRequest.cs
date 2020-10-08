@@ -9,7 +9,7 @@ namespace ATS.Client.Requests
 
 		public FindEntityRequest( Guid entityId )
 		{
-			InternalValidator.CheckUniqueId( entityId );
+			ValidationHelper.CheckUniqueId( entityId );
 
 			_entityId = entityId;
 		}

@@ -10,7 +10,7 @@ namespace ATS.Client.Requests
 
 		public DeleteEventRequest( Guid eventId )
 		{
-			InternalValidator.CheckUniqueId( eventId );
+			ValidationHelper.CheckUniqueId( eventId );
 
 			_eventId = eventId;
 		}

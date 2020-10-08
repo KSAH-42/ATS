@@ -9,7 +9,7 @@ namespace ATS.Client.Requests
 
 		public SaveEntityRequest( DOEntity entity )
 		{
-			InternalValidator.CheckEntity( entity );
+			ValidationHelper.CheckEntity( entity );
 
 			_entity = entity;
 		}

@@ -10,7 +10,7 @@ namespace ATS.Client.Requests
 
 		public ListEntitiesRequest( IReadOnlyCollection<Guid> entities )
 		{
-			InternalValidator.CheckCollection( entities );
+			ValidationHelper.CheckCollection( entities );
 
 			_entities = entities;
 		}

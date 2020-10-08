@@ -12,7 +12,7 @@ namespace ATS.Client.Requests
 
 		public EnableCardRequest( Guid customerId , Guid cardId )
 		{
-			InternalValidator.CheckUniqueId( customerId , cardId );
+			ValidationHelper.CheckUniqueId( customerId , cardId );
 
 			_customerId  = customerId ;
 			_cardId      = cardId     ;

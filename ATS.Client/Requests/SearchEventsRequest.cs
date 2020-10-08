@@ -14,7 +14,7 @@ namespace ATS.Client.Requests
 
 		public SearchEventsRequest( DateTime startTime , DateTime endTime , int maximumOfResults )
 		{
-			InternalValidator.CheckSearchParameters( startTime , endTime , maximumOfResults );
+			ValidationHelper.CheckSearchParameters( startTime , endTime , maximumOfResults );
 
 			_startTime        = startTime;
 			_endTime          = endTime;

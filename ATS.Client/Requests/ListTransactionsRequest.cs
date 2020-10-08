@@ -10,7 +10,7 @@ namespace ATS.Client.Requests
 
 		public ListTransactionsRequest( IReadOnlyCollection<Guid> transactions )
 		{
-			InternalValidator.CheckCollection( transactions );
+			ValidationHelper.CheckCollection( transactions );
 
 			_transactions = transactions;
 		}

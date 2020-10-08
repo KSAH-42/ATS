@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace ATS.Client
 {
-	internal static class InternalValidator
+	internal static class ValidationHelper
 	{
 		public static void CheckUniqueId( Guid uniqueId )
 		{

@@ -10,7 +10,7 @@ namespace ATS.Client.Requests
 
 		public ListEventsRequest( IReadOnlyCollection<Guid> events )
 		{
-			InternalValidator.CheckCollection( events );
+			ValidationHelper.CheckCollection( events );
 
 			_events = events;
 		}

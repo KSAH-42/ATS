@@ -13,7 +13,7 @@ namespace ATS.Client.Requests
 
 		public AuthenticationRequest( string loginId , string password )
 		{
-			InternalValidator.CheckLogin( loginId );
+			ValidationHelper.CheckLogin( loginId );
 
 			_loginId  = loginId ;
 			_password = password ?? string.Empty;

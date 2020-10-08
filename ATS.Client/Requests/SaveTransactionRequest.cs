@@ -9,7 +9,7 @@ namespace ATS.Client.Requests
 
 		public SaveTransactionRequest( DOTransaction transaction )
 		{
-			InternalValidator.CheckTransaction( transaction );
+			ValidationHelper.CheckTransaction( transaction );
 
 			_transaction = transaction;
 		}

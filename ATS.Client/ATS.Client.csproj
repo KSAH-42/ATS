@@ -46,7 +46,7 @@
     <Compile Include="HandlerList.cs" />
     <Compile Include="Handlers\NullHandler.cs" />
     <Compile Include="IClient.cs" />
-    <Compile Include="InternalValidator.cs" />
+    <Compile Include="ValidationHelper.cs" />
     <Compile Include="PermissionManager.cs" />
     <Compile Include="Requests\SearchEventsRequest.cs" />
     <Compile Include="Requests\SearchTransactionsRequest.cs" />
