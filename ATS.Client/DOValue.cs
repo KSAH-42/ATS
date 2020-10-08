@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
+/*
+ DO the prefix stants for Data Object
+ */
+
 namespace ATS.Client
 {
 	public class DOValue
