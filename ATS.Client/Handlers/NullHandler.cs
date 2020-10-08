@@ -14,8 +14,8 @@ namespace ATS.Client.Handlers
 			get => string.Empty;
 		}
 
-		public override void BeginProcess( IRequest request ) {}
+		public override void BeginHandle( IRequest request ) {}
 
-		public override void EndProcess( IRequest request , IResponse response ) {}
+		public override void EndHandle( IRequest request , IResponse response ) {}
 	}
 }

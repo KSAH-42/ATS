@@ -9,8 +9,8 @@ namespace ATS.Client
 			get;
 		}
 
-		void BeginProcess( IRequest request );
+		void BeginHandle( IRequest request );
 
-		void EndProcess( IRequest request , IResponse response );
+		void EndHandle( IRequest request , IResponse response );
 	}
 }

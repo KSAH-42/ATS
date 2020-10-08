@@ -12,8 +12,8 @@ namespace ATS.Client.Handlers
 			get;
 		}
 
-		public abstract void BeginProcess( IRequest request );
+		public abstract void BeginHandle( IRequest request );
 
-		public abstract void EndProcess( IRequest request , IResponse response );
+		public abstract void EndHandle( IRequest request , IResponse response );
 	}
 }
