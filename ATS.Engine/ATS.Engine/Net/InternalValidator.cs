@@ -6,47 +6,55 @@ namespace ATS.Engine.Net
 {
 	internal static class InternalValidator
 	{
-		public static Guid CheckUniqueId( Guid uniqueId )
+		public static void CheckUniqueId( Guid uniqueId )
 		{
 			if ( uniqueId == Guid.Empty )
 			{
 				throw new ValidationException();
 			}
-
-			return uniqueId;
 		}
 
-		public static decimal CheckAmount( decimal price )
+		public static void CheckUniqueId( params Guid[] ids )
+		{
+			if ( null == ids || 0 >= ids.Length )
+			{
+				throw new ValidationException();
+			}
+
+			foreach ( var id in ids )
+			{
+				if ( id == Guid.Empty )
+				{
+					throw new ValidationException();
+				}
+			}
+		}
+
+		public static void CheckAmount( decimal price )
 		{
 			if ( price >= 0 )
 			{
 				throw new ValidationException();
 			}
-
-			return price;
 		}
 
-		public static string CheckLogin( string loginId )
+		public static void CheckLogin( string loginId )
 		{
 			if ( string.IsNullOrWhiteSpace( loginId ) )
 			{
 				throw new ValidationException();
 			}
-
-			return loginId;
 		}
 
-		public static DateTime CheckTime( DateTime time )
+		public static void CheckTime( DateTime time )
 		{
 			if ( time == DateTime.MinValue || time == DateTime.MaxValue )
 			{
 				throw new ValidationException();
 			}
-
-			return time;
 		}
 
-		public static DateTime CheckStartTime( DateTime startTime , DateTime endTime )
+		public static void CheckSearchParameters( DateTime startTime , DateTime endTime , int maxHits )
 		{
 			if ( startTime == DateTime.MinValue || startTime == DateTime.MaxValue )
 			{
@@ -63,57 +71,26 @@ namespace ATS.Engine.Net
 				throw new ValidationException();
 			}
 
-			return startTime;
-		}
-
-		public static int CheckMaximumOfResults( int value )
-		{
-			if ( 1 <= value && value <= 10000 )
-			{
-				return value;
-			}
-
-			throw new ValidationException();
-		}
-
-		public static DateTime CheckEndTime( DateTime startTime , DateTime endTime )
-		{
-			if ( startTime == DateTime.MinValue || startTime == DateTime.MaxValue )
+			if ( ! (( 0 < maxHits ) && ( maxHits <= 10000 )) )
 			{
 				throw new ValidationException();
 			}
-
-			if ( endTime == DateTime.MinValue || endTime == DateTime.MaxValue )
-			{
-				throw new ValidationException();
-			}
-
-			if ( startTime >= endTime )
-			{
-				throw new ValidationException();
-			}
-
-			return endTime;
 		}
 
-		public static IEnumerable<TElement> CheckCollection<TElement>( IEnumerable<TElement> elements )
+		public static void CheckCollection<TElement>( IEnumerable<TElement> elements )
 		{
 			if ( elements == null || ! elements.Any() )
 			{
 				throw new ValidationException();
 			}
-
-			return elements;
 		}
 
-		public static IReadOnlyCollection<TElement> CheckCollection<TElement>( IReadOnlyCollection<TElement> elements )
+		public static void CheckCollection<TElement>( IReadOnlyCollection<TElement> elements )
 		{
 			if ( elements == null || elements.Count == 0 )
 			{
 				throw new ValidationException();
 			}
-
-			return elements;
 		}
 
 
@@ -123,7 +100,7 @@ namespace ATS.Engine.Net
 
 
 
-		public static DOEntity CheckEntity( DOEntity entity )
+		public static void CheckEntity( DOEntity entity )
 		{
 			if ( null == entity )
 			{
@@ -144,11 +121,9 @@ namespace ATS.Engine.Net
 			{
 				throw new ValidationException();
 			}
-
-			return entity;
 		}
 		
-		public static DOTransaction CheckTransaction( DOTransaction transaction )
+		public static void CheckTransaction( DOTransaction transaction )
 		{
 			if ( null == transaction )
 			{
@@ -174,11 +149,9 @@ namespace ATS.Engine.Net
 			{
 				throw new ValidationException();
 			}
-
-			return transaction;
 		}
 
-		public static DOEvent CheckEvent( DOEvent @event )
+		public static void CheckEvent( DOEvent @event )
 		{
 			if ( null == @event )
 			{
@@ -204,10 +177,7 @@ namespace ATS.Engine.Net
 			{
 				throw new ValidationException();
 			}
-
-			return @event;
 		}
-
 
 	}
 }

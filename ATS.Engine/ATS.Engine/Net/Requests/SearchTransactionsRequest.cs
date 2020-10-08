@@ -14,9 +14,11 @@ namespace ATS.Engine.Net.Requests
 
 		public SearchTransactionsRequest( DateTime startTime , DateTime endTime , int maximumOfResults )
 		{
-			_startTime        = InternalValidator.CheckStartTime( startTime , endTime );
-			_endTime          = InternalValidator.CheckEndTime  ( startTime , endTime );
-			_maximumOfResults = InternalValidator.CheckMaximumOfResults( maximumOfResults );
+			InternalValidator.CheckSearchParameters( startTime , endTime , maximumOfResults );
+
+			_startTime        = startTime;
+			_endTime          = endTime;
+			_maximumOfResults = maximumOfResults;
 		}
 	
 

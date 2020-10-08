@@ -15,9 +15,12 @@ namespace ATS.Engine.Net.Requests
 
 		public WithdrawRequest( Guid customerId , Guid accountId , decimal amount )
 		{
-			_customerId  = InternalValidator.CheckUniqueId( customerId ) ;
-			_accountId   = InternalValidator.CheckUniqueId( accountId  ) ;
-			_amount      = InternalValidator.CheckAmount  ( amount     ) ;
+			InternalValidator.CheckUniqueId( customerId , accountId );
+			InternalValidator.CheckAmount( amount );
+
+			_customerId  = customerId ;
+			_accountId   = accountId  ;
+			_amount      = amount     ;
 		}
 	
 

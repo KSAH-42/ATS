@@ -11,7 +11,9 @@ namespace ATS.Engine.Net.Requests
 
 		public SaveEventRequest( DOEvent @event )
 		{
-			_event = InternalValidator.CheckEvent( @event );
+			InternalValidator.CheckEvent( @event );
+
+			_event = @event;
 		}
 
 		

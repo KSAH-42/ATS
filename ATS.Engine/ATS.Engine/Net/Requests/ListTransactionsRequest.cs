@@ -10,7 +10,9 @@ namespace ATS.Engine.Net.Requests
 
 		public ListTransactionsRequest( IReadOnlyCollection<Guid> transactions )
 		{
-			_transactions = InternalValidator.CheckCollection( transactions );
+			InternalValidator.CheckCollection( transactions );
+
+			_transactions = transactions;
 		}
 
 		

@@ -10,7 +10,9 @@ namespace ATS.Engine.Net.Requests
 
 		public DeleteEventsRequest( IReadOnlyCollection<Guid> events )
 		{
-			_events = InternalValidator.CheckCollection( events );
+			InternalValidator.CheckCollection( events );
+
+			_events = events;
 		}
 
 

@@ -9,7 +9,9 @@ namespace ATS.Engine.Net.Requests
 
 		public FindEventRequest( Guid eventId )
 		{
-			_eventId = InternalValidator.CheckUniqueId( eventId );
+			InternalValidator.CheckUniqueId( eventId );
+
+			_eventId = eventId;
 		}
 
 		

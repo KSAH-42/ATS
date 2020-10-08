@@ -10,7 +10,9 @@ namespace ATS.Engine.Net.Requests
 
 		public DeleteEventRequest( Guid eventId )
 		{
-			_eventId = InternalValidator.CheckUniqueId( eventId );
+			InternalValidator.CheckUniqueId( eventId );
+
+			_eventId = eventId;
 		}
 	
 

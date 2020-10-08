@@ -13,8 +13,10 @@ namespace ATS.Engine.Net.Requests
 
 		public ReOpenAccountRequest( Guid customerId , Guid accountId )
 		{
-			_customerId  = InternalValidator.CheckUniqueId( customerId ) ;
-			_accountId   = InternalValidator.CheckUniqueId( accountId  ) ;
+			InternalValidator.CheckUniqueId( customerId , accountId );
+
+			_customerId  = customerId;
+			_accountId   = accountId;
 		}
 	
 

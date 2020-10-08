@@ -9,7 +9,9 @@ namespace ATS.Engine.Net.Requests
 
 		public SaveEntityRequest( DOEntity entity )
 		{
-			_entity = InternalValidator.CheckEntity( entity );
+			InternalValidator.CheckEntity( entity );
+
+			_entity = entity;
 		}
 
 		

@@ -13,7 +13,9 @@ namespace ATS.Engine.Net.Requests
 
 		public AuthenticationRequest( string loginId , string password )
 		{
-			_loginId  = InternalValidator.CheckLogin( loginId ) ;
+			InternalValidator.CheckLogin( loginId );
+
+			_loginId  = loginId ;
 			_password = password ?? string.Empty;
 		}
 	

@@ -10,7 +10,9 @@ namespace ATS.Engine.Net.Requests
 
 		public DeleteEntityRequest( Guid entityId )
 		{
-			_entityId = InternalValidator.CheckUniqueId( entityId );
+			InternalValidator.CheckUniqueId( entityId );
+
+			_entityId = entityId;
 		}
 	
 

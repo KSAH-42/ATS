@@ -12,8 +12,10 @@ namespace ATS.Engine.Net.Requests
 
 		public DisableCardRequest( Guid customerId , Guid cardId )
 		{
-			_customerId  = InternalValidator.CheckUniqueId( customerId );
-			_cardId      = InternalValidator.CheckUniqueId( cardId     );
+			InternalValidator.CheckUniqueId( customerId , cardId );
+
+			_customerId  = customerId ;
+			_cardId      = cardId     ;
 		}
 	
 

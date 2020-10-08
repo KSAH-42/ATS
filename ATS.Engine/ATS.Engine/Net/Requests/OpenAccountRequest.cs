@@ -13,8 +13,11 @@ namespace ATS.Engine.Net.Requests
 
 		public OpenAccountRequest( Guid customerId , decimal price )
 		{
-			_customerId  = InternalValidator.CheckUniqueId( customerId ) ;
-			_price       = InternalValidator.CheckAmount   ( price      ) ;
+			InternalValidator.CheckUniqueId( customerId );
+			InternalValidator.CheckAmount( price );
+
+			_customerId  = customerId ;
+			_price       = price      ;
 		}
 	
 

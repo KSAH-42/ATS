@@ -10,7 +10,9 @@ namespace ATS.Engine.Net.Requests
 
 		public DeleteEntitiesRequest( IReadOnlyCollection<Guid> entities )
 		{
-			_entities = InternalValidator.CheckCollection<Guid>( entities );
+			InternalValidator.CheckCollection<Guid>( entities );
+
+			_entities = entities;
 		}
 
 		

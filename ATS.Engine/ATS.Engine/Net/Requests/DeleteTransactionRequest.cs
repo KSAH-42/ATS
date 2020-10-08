@@ -10,7 +10,9 @@ namespace ATS.Engine.Net.Requests
 
 		public DeleteTransactionRequest( Guid transactionId )
 		{
-			_transactionId = InternalValidator.CheckUniqueId( transactionId );
+			InternalValidator.CheckUniqueId( transactionId );
+
+			_transactionId = transactionId;
 		}
 	
 

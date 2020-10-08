@@ -67,6 +67,7 @@
     <Compile Include="Net\Responses\ReOpenAccountResponse.cs" />
     <Compile Include="Net\Responses\OpenAccountResponse.cs" />
     <Compile Include="Net\PermissionException.cs" />
+    <Compile Include="Net\PingException.cs" />
     <Compile Include="Net\ValidationException.cs" />
     <Compile Include="Net\IResponse.cs" />
     <Compile Include="Net\IRequest.cs" />

@@ -39,13 +39,17 @@ namespace ATS.Engine.Net
 			get;
 		}
 
-		void Connect( string server );
+		TimeSpan Timeout
+		{
+			get;
+			set;
+		}
 
-		void Connect( string server , TimeSpan timeout );
+		void Connect( string host );
 
-		Task ConnectAsync( string server );
+		Task ConnectAsync( string host );
 
-		Task ConnectAsync( string server , TimeSpan timeout );
+		Task ConnectAsync( string host , CancellationToken cancellationToken );
 
 		void Disconnect();
 

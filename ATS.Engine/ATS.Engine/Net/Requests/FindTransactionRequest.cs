@@ -9,7 +9,9 @@ namespace ATS.Engine.Net.Requests
 
 		public FindTransactionRequest( Guid transactionId )
 		{
-			_transactionId = InternalValidator.CheckUniqueId( transactionId );
+			InternalValidator.CheckUniqueId( transactionId );
+
+			_transactionId = transactionId;
 		}
 
 		

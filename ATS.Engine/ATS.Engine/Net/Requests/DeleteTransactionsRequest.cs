@@ -12,7 +12,9 @@ namespace ATS.Engine.Net.Requests
 
 		public DeleteTransactionsRequest( IReadOnlyCollection<Guid> trannsactions )
 		{
-			_transactions = InternalValidator.CheckCollection( trannsactions );
+			InternalValidator.CheckCollection( trannsactions );
+
+			_transactions = trannsactions;
 		}
 
 
