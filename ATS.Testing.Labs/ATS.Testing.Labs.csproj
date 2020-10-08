@@ -50,13 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ATS.Engine\ATS.Client.csproj">
+    <ProjectReference Include="..\ATS.Client\ATS.Client.csproj">
       <Project>{d3726a74-a85b-4d95-a45c-03f3a3e659c3}</Project>
       <Name>ATS.Client</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Temp.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
