@@ -4,17 +4,18 @@ namespace ATS.Client
 {
 	public sealed class DOAddress : DOValue
 	{
-		private string                  _street        = string.Empty;
+		private string    _street    = string.Empty;
 
-		private string                  _city          = string.Empty;
+		private string    _city      = string.Empty;
 
-		private string                  _zipCode       = string.Empty;
+		private string    _zipCode   = string.Empty;
 
-		private string                  _country       = string.Empty;
-
-
+		private string    _country   = string.Empty;
 
 		
+
+
+
 		public string Street
 		{
 			get => GetField( ref _street );
@@ -38,7 +39,6 @@ namespace ATS.Client
 			get => GetField( ref _country );
 			set => SetField( ref _country , ValueFilter.ReplaceNull( value ) );
 		}
-
-		
+							
 	}
 }

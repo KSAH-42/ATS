@@ -4,14 +4,13 @@ namespace ATS.Client
 {
 	public sealed class DOContacts : DOValue
 	{
-		private string                  _phone         = string.Empty;
+		private string   _phone    = string.Empty;
 
-		private string                  _mobile        = string.Empty;
+		private string   _mobile   = string.Empty;
 
-		private string                  _fax           = string.Empty;
+		private string   _fax      = string.Empty;
 
-		private string                  _email         = string.Empty;
-
+		private string   _email    = string.Empty;
 
 
 
