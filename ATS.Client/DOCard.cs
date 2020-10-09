@@ -38,13 +38,13 @@ namespace ATS.Client
 		public string Number
 		{
 			get => GetField( ref _number );
-			set => SetField( ref _number , ValueFilter.Filter( value ) );
+			set => SetField( ref _number , ValueFilter.ReplaceNull( value ) );
 		}
 
 		public string Password
 		{
 			get => GetField( ref _pincode );
-			set => SetField( ref _pincode , ValueFilter.Filter( value ) );
+			set => SetField( ref _pincode , ValueFilter.ReplaceNull( value ) );
 		}
 
 		public bool IsEnabled

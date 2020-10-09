@@ -38,7 +38,7 @@ namespace ATS.Client
 		public string Value
 		{
 			get => GetField( ref _value );
-			set => SetField( ref _value , ValueFilter.Filter( value ) );
+			set => SetField( ref _value , ValueFilter.ReplaceNull( value ) );
 		}
 
 

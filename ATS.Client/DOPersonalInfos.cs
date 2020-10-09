@@ -18,19 +18,19 @@ namespace ATS.Client
 		public string FirstName
 		{
 			get => GetField( ref _firstName );
-			set => SetField( ref _firstName , ValueFilter.Filter( value ) );
+			set => SetField( ref _firstName , ValueFilter.ReplaceNull( value ) );
 		}
 
 		public string LastName
 		{
 			get => GetField( ref _lastName );
-			set => SetField( ref _lastName , ValueFilter.Filter( value ) );
+			set => SetField( ref _lastName , ValueFilter.ReplaceNull( value ) );
 		}
 
 		public string Nationality
 		{
 			get => GetField( ref _nationality );
-			set => SetField( ref _nationality , ValueFilter.Filter( value ) );
+			set => SetField( ref _nationality , ValueFilter.ReplaceNull( value ) );
 		}
 
 		public DateTime BirthDay

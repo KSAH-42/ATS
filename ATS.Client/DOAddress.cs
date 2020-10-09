@@ -18,25 +18,25 @@ namespace ATS.Client
 		public string Street
 		{
 			get => GetField( ref _street );
-			set => SetField( ref _street , ValueFilter.Filter( value ) );
+			set => SetField( ref _street , ValueFilter.ReplaceNull( value ) );
 		}
 
 		public string City
 		{
 			get => GetField( ref _city );
-			set => SetField( ref _city , ValueFilter.Filter( value ) );
+			set => SetField( ref _city , ValueFilter.ReplaceNull( value ) );
 		}
 
 		public string ZipCode
 		{
 			get => GetField( ref _zipCode );
-			set => SetField( ref _zipCode , ValueFilter.Filter( value ) );
+			set => SetField( ref _zipCode , ValueFilter.ReplaceNull( value ) );
 		}
 
 		public string Country
 		{
 			get => GetField( ref _country );
-			set => SetField( ref _country , ValueFilter.Filter( value ) );
+			set => SetField( ref _country , ValueFilter.ReplaceNull( value ) );
 		}
 
 		
