@@ -4,9 +4,6 @@ namespace ATS.Client.Handlers
 {
 	public abstract class Handler : IHandler
 	{
-		public static readonly Handler Null = new NullHandler();
-
-
 		public abstract string TypeId
 		{
 			get;

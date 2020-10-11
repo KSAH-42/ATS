@@ -44,8 +44,6 @@
     <Compile Include="DORole.cs" />
     <Compile Include="DOUser.cs" />
     <Compile Include="Enums.cs" />
-    <Compile Include="HandlerList.cs" />
-    <Compile Include="Handlers\NullHandler.cs" />
     <Compile Include="IProxy.cs" />
     <Compile Include="ValueFilter.cs" />
     <Compile Include="ValidationHelper.cs" />

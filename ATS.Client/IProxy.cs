@@ -19,11 +19,6 @@ namespace ATS.Client
 			get;
 		}
 
-		HandlerList Handlers
-		{
-			get;
-		}
-
 		bool IsConnected
 		{
 			get;
