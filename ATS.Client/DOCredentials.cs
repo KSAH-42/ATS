@@ -2,7 +2,7 @@
 
 namespace ATS.Client
 {
-	public sealed class DOCredentials : DOValue
+	public sealed class DOCredentials : DORoot
 	{
 		private string _loginId   = string.Empty;
 

@@ -5,24 +5,26 @@ using System.Linq;
 
 namespace ATS.Client
 {
-	public sealed class PermissionList : IEnumerable<Permission>
+	public sealed class DOPermissionList : IEnumerable<DOPermission>
 	{
-		public const int                                Maximum           = 100000;
+		public const int                                  Maximum           = 100000;
 
 
-		private readonly object                         _lock             = new object();
+		private readonly object                           _lock             = new object();
 
-		private readonly IDictionary<Guid,Permission>   _collection       = new Dictionary<Guid,Permission>();
+		private readonly IDictionary<Guid,DOPermission>   _collection       = new Dictionary<Guid,DOPermission>();
+
+		private bool                                      _isDirty          = false;
 
 
 
 
-		public PermissionList()
+		public DOPermissionList()
 		{
 		}
 
 
-		public PermissionList( IEnumerable<Permission> elements )
+		public DOPermissionList( IEnumerable<DOPermission> elements )
 		{
 			if ( elements == null )
 			{
@@ -35,14 +37,14 @@ namespace ATS.Client
 
 
 
-		public Permission this[ int index ]
+		public DOPermission this[ int index ]
 		{
-			get => GetAt( index );
+			get => FindAt( index );
 		}
 
-		public Permission this[ Guid uniqueId ]
+		public DOPermission this[ Guid uniqueId ]
 		{
-			get => GetById( uniqueId );
+			get => FindById( uniqueId );
 		}
 
 
@@ -55,6 +57,25 @@ namespace ATS.Client
 		public object SyncRoot
 		{
 			get => _lock;
+		}
+
+		public bool IsDirty
+		{
+			get
+			{
+				lock ( _lock )
+				{
+					return _isDirty;
+				}
+			}
+
+			set
+			{
+				lock ( _lock )
+				{
+					_isDirty = value;
+				}
+			}
 		}
 
 		public bool IsEmpty
@@ -79,7 +100,7 @@ namespace ATS.Client
 			}
 		}
 
-		public ICollection<Permission> Values
+		public ICollection<DOPermission> Values
 		{
 			get
 			{
@@ -116,30 +137,11 @@ namespace ATS.Client
 			}
 		}
 
-		public IEnumerator<Permission> GetEnumerator()
+		public IEnumerator<DOPermission> GetEnumerator()
 		{
 			lock ( _lock )
 			{
 				return _collection.Values.ToList().GetEnumerator();
-			}
-		}
-
-		public void ForEach( Action<Permission> action )
-		{
-			if ( action == null )
-			{
-				throw new ArgumentNullException( nameof( action ) );
-			}
-
-			lock ( _lock )
-			{
-				foreach ( var element in _collection.Values )
-				{
-					if ( element != null )
-					{
-						action( element );
-					}
-				}
 			}
 		}
 
@@ -151,7 +153,7 @@ namespace ATS.Client
 			}
 		}
 
-		public bool Any( Func<Permission , bool> predicate )
+		public bool Any( Func<DOPermission , bool> predicate )
 		{
 			if ( predicate == null )
 			{
@@ -172,7 +174,7 @@ namespace ATS.Client
 			}
 		}
 
-		public bool Contains( Permission element )
+		public bool Contains( DOPermission element )
 		{
 			if ( element == null )
 			{
@@ -185,9 +187,9 @@ namespace ATS.Client
 			}
 		}
 
-		public bool Add( Permission element )
+		public bool Add( DOPermission element )
 		{				
-			if ( element == null || object.ReferenceEquals( element , Permission.Null ) )
+			if ( element == null )
 			{
 				return false;
 			}
@@ -206,11 +208,13 @@ namespace ATS.Client
 
 				_collection[ element.UniqueId ] = element;
 
+				OnChange();
+
 				return true;
 			}
 		}
 
-		public int AddRange( IEnumerable<Permission> elements )
+		public int AddRange( IEnumerable<DOPermission> elements )
 		{
 			if ( elements == null )
 			{
@@ -228,7 +232,7 @@ namespace ATS.Client
 						break;
 					}
 
-					if ( element == null || object.ReferenceEquals( element , Permission.Null ) )
+					if ( element == null )
 					{
 						continue;
 					}
@@ -243,20 +247,20 @@ namespace ATS.Client
 					++ results;
 				}
 
+				if ( results > 0 )
+				{
+					OnChange();
+				}
+
 				return results;
 			}
 		}
 
-		public Permission GetById( Guid uniqueId )
-		{
-			return FindById( uniqueId ) ?? Permission.Null;
-		}
-
-		public Permission FindById( Guid uniqueId )
+		public DOPermission FindById( Guid uniqueId )
 		{
 			lock ( _lock )
 			{
-				if ( _collection.TryGetValue( uniqueId , out Permission element ) )
+				if ( _collection.TryGetValue( uniqueId , out DOPermission element ) )
 				{
 					return element;
 				}
@@ -265,12 +269,7 @@ namespace ATS.Client
 			}
 		}
 
-		public Permission GetAt( int index )
-		{
-			return FindAt( index ) ?? Permission.Null;
-		}
-
-		public Permission FindAt( int index )
+		public DOPermission FindAt( int index )
 		{
 			lock ( _lock )
 			{
@@ -283,7 +282,7 @@ namespace ATS.Client
 			}
 		}
 
-		public IList<Permission> GetAll()
+		public IList<DOPermission> GetAll()
 		{
 			lock ( _lock )
 			{
@@ -291,7 +290,7 @@ namespace ATS.Client
 			}
 		}
 
-		public IList<Permission> GetAll( Func<Permission , bool> predicate )
+		public IList<DOPermission> GetAll( Func<DOPermission , bool> predicate )
 		{
 			if ( predicate == null )
 			{
@@ -308,11 +307,18 @@ namespace ATS.Client
 		{
 			lock ( _lock )
 			{
-				return _collection.Remove( uniqueId );
+				if ( _collection.Remove( uniqueId ) )
+				{
+					OnChange();
+
+					return true;
+				}
+
+				return false;
 			}
 		}
 
-		public bool Remove( Permission element  )
+		public bool Remove( DOPermission element  )
 		{
 			if ( element == null )
 			{
@@ -321,7 +327,14 @@ namespace ATS.Client
 
 			lock ( _lock )
 			{
-				return _collection.Remove( element.UniqueId );
+				if ( _collection.Remove( element.UniqueId ) )
+				{
+					OnChange();
+
+					return true;
+				}
+
+				return false;
 			}
 		}
 
@@ -329,7 +342,23 @@ namespace ATS.Client
 		{
 			lock ( _lock )
 			{
-				_collection.Clear();
+				if ( _collection.Count > 0 )
+				{
+					_collection.Clear();
+
+					OnChange();
+				}
+			}
+		}
+
+
+
+
+		private void OnChange()
+		{
+			lock ( _lock )
+			{
+				_isDirty = true;
 			}
 		}
 	}

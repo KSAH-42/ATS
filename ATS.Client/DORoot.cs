@@ -32,11 +32,6 @@ namespace ATS.Client
 			get => _lock;
 		}
 
-		public abstract Guid UniqueId
-		{
-			get;
-		}
-
 		public virtual bool IsDirty
 		{
 			get

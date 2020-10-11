@@ -2,7 +2,7 @@
 
 namespace ATS.Client
 {
-	public sealed class DOContacts : DOValue
+	public sealed class DOContacts : DORoot
 	{
 		private string   _phone    = string.Empty;
 

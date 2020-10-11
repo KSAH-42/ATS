@@ -41,11 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DORole.cs" />
     <Compile Include="DOUser.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="HandlerList.cs" />
     <Compile Include="Handlers\NullHandler.cs" />
-    <Compile Include="IClient.cs" />
+    <Compile Include="IProxy.cs" />
     <Compile Include="ValueFilter.cs" />
     <Compile Include="ValidationHelper.cs" />
     <Compile Include="PermissionManager.cs" />
@@ -74,7 +75,7 @@
     <Compile Include="IRequest.cs" />
     <Compile Include="DOAccount.cs" />
     <Compile Include="DOAdviser.cs" />
-    <Compile Include="DOCache.cs" />
+    <Compile Include="DOEntityCache.cs" />
     <Compile Include="Handlers\Handler.cs" />
     <Compile Include="IHandler.cs" />
     <Compile Include="DOUniqueIdList.cs" />
@@ -88,14 +89,12 @@
     <Compile Include="DOEvent.cs" />
     <Compile Include="DOPropertyChangingEventArgs.cs" />
     <Compile Include="DOPropertyChangedEventArgs.cs" />
-    <Compile Include="DOReadOnlyCache.cs" />
-    <Compile Include="DOValue.cs" />
     <Compile Include="DORoot.cs" />
     <Compile Include="DOSetting.cs" />
     <Compile Include="DOTransaction.cs" />
-    <Compile Include="Permission.cs" />
-    <Compile Include="PermissionReadOnlyList.cs" />
-    <Compile Include="PermissionList.cs" />
+    <Compile Include="DOPermission.cs" />
+    <Compile Include="DOPermissionReadOnlyList.cs" />
+    <Compile Include="DOPermissionList.cs" />
     <Compile Include="Requests\DeleteEventsRequest.cs" />
     <Compile Include="Requests\DeleteTransactionsRequest.cs" />
     <Compile Include="Requests\DeleteEntitiesRequest.cs" />

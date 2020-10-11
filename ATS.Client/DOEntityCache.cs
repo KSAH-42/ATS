@@ -5,24 +5,24 @@ using System.Linq;
 
 namespace ATS.Client
 {
-	public sealed class DOCache<TDOElement> : IEnumerable<TDOElement> where TDOElement : DORoot
+	public sealed class DOEntityCache : IEnumerable<DOEntity>
 	{
 		public const int                                Maximum           = 100000;
 
 
 		private readonly object                         _lock             = new object();
 
-		private readonly IDictionary<Guid,TDOElement>   _collection       = new Dictionary<Guid,TDOElement>();
+		private readonly IDictionary<Guid,DOEntity>    _collection       = new Dictionary<Guid,DOEntity>();
 
 
 
 
-		public DOCache()
+		public DOEntityCache()
 		{
 		}
 
 
-		public DOCache( IEnumerable<TDOElement> elements )
+		public DOEntityCache( IEnumerable<DOEntity> elements )
 		{
 			if ( elements == null )
 			{
@@ -35,12 +35,12 @@ namespace ATS.Client
 
 
 
-		public TDOElement this[ int index ]
+		public DOEntity this[ int index ]
 		{
 			get => FindAt( index );
 		}
 
-		public TDOElement this[ Guid id ]
+		public DOEntity this[ Guid id ]
 		{
 			get => FindById( id );
 		}
@@ -68,7 +68,7 @@ namespace ATS.Client
 			}
 		}
 
-		public ICollection<TDOElement> Values
+		public ICollection<DOEntity> Values
 		{
 			get
 			{
@@ -105,7 +105,7 @@ namespace ATS.Client
 			}
 		}
 
-		public IEnumerator<TDOElement> GetEnumerator()
+		public IEnumerator<DOEntity> GetEnumerator()
 		{
 			lock ( _lock )
 			{
@@ -113,7 +113,7 @@ namespace ATS.Client
 			}
 		}
 
-		public void ForEach( Action<TDOElement> action )
+		public void ForEach( Action<DOEntity> action )
 		{
 			if ( action == null )
 			{
@@ -132,7 +132,7 @@ namespace ATS.Client
 			}
 		}
 
-		public void ForEach<TItem>( Action<TItem> action ) where TItem : TDOElement
+		public void ForEach<TEntity>( Action<TEntity> action ) where TEntity : DOEntity
 		{
 			if ( action == null )
 			{
@@ -143,7 +143,7 @@ namespace ATS.Client
 			{
 				foreach ( var element in _collection.Values )
 				{
-					var desiredElement = element as TItem;
+					var desiredElement = element as TEntity;
 
 					if ( desiredElement != null )
 					{
@@ -161,7 +161,7 @@ namespace ATS.Client
 			}
 		}
 
-		public bool Any( Func<TDOElement , bool> predicate )
+		public bool Any( Func<DOEntity , bool> predicate )
 		{
 			if ( predicate == null )
 			{
@@ -174,13 +174,13 @@ namespace ATS.Client
 			}
 		}
 
-		public bool Any<TItem>() where TItem : TDOElement
+		public bool Any<TEntity>() where TEntity : DOEntity
 		{
 			lock ( _lock )
 			{
 				foreach ( var element in _collection.Values )
 				{
-					if ( element is TItem )
+					if ( element is TEntity )
 					{
 						return true;
 					}
@@ -190,7 +190,7 @@ namespace ATS.Client
 			}
 		}
 
-		public bool Any<TItem>( Func<TItem , bool> predicate ) where TItem : TDOElement
+		public bool Any<TEntity>( Func<TEntity , bool> predicate ) where TEntity : DOEntity
 		{
 			if ( predicate == null )
 			{
@@ -201,7 +201,7 @@ namespace ATS.Client
 			{
 				foreach( var element in _collection.Values )
 				{
-					var desiredElement = element as TItem;
+					var desiredElement = element as TEntity;
 
 					if ( null == desiredElement )
 					{
@@ -226,7 +226,7 @@ namespace ATS.Client
 			}
 		}
 
-		public int Count( Func<TDOElement,bool> predicate )
+		public int Count( Func<DOEntity,bool> predicate )
 		{
 			if ( predicate == null )
 			{
@@ -256,7 +256,7 @@ namespace ATS.Client
 			}
 		}
 
-		public int Count<TItem>()
+		public int Count<TEntity>()
 		{
 			lock ( _lock )
 			{
@@ -264,7 +264,7 @@ namespace ATS.Client
 
 				foreach ( var element in _collection.Values )
 				{
-					if ( element is TItem )
+					if ( element is TEntity )
 					{
 						++ results;
 					}
@@ -274,7 +274,7 @@ namespace ATS.Client
 			}
 		}
 
-		public int Count<TItem>( Func<TItem , bool> predicate ) where TItem : TDOElement
+		public int Count<TEntity>( Func<TEntity , bool> predicate ) where TEntity : DOEntity
 		{
 			if ( predicate == null )
 			{
@@ -287,7 +287,7 @@ namespace ATS.Client
 
 				foreach ( var element in _collection.Values )
 				{
-					var desiredElement = element as TItem;
+					var desiredElement = element as TEntity;
 
 					if ( desiredElement == null )
 					{
@@ -314,7 +314,7 @@ namespace ATS.Client
 			}
 		}
 
-		public bool Contains( TDOElement element )
+		public bool Contains( DOEntity element )
 		{
 			if ( element == null )
 			{
@@ -327,7 +327,7 @@ namespace ATS.Client
 			}
 		}
 
-		public bool Add( TDOElement element )
+		public bool Add( DOEntity element )
 		{
 			if ( element == null )
 			{
@@ -352,7 +352,7 @@ namespace ATS.Client
 			}
 		}
 
-		public bool AddOrUpdate( TDOElement element )
+		public bool AddOrUpdate( DOEntity element )
 		{
 			if ( element == null )
 			{
@@ -375,7 +375,7 @@ namespace ATS.Client
 			}
 		}
 
-		public int AddRange( IEnumerable<TDOElement> elements )
+		public int AddRange( IEnumerable<DOEntity> elements )
 		{
 			if ( elements == null )
 			{
@@ -412,7 +412,7 @@ namespace ATS.Client
 			}
 		}
 
-		public bool Update( TDOElement element )
+		public bool Update( DOEntity element )
 		{
 			if ( element == null )
 			{
@@ -432,7 +432,7 @@ namespace ATS.Client
 			}
 		}
 
-		public int UpdateRange( IEnumerable<TDOElement> elements )
+		public int UpdateRange( IEnumerable<DOEntity> elements )
 		{
 			if ( elements == null )
 			{
@@ -464,7 +464,7 @@ namespace ATS.Client
 			}
 		}
 
-		public TDOElement FindFirst()
+		public DOEntity FindFirst()
 		{
 			lock ( _lock )
 			{
@@ -472,15 +472,15 @@ namespace ATS.Client
 			}
 		}
 
-		public TItem FindFirst<TItem>() where TItem : TDOElement
+		public TEntity FindFirst<TEntity>() where TEntity : DOEntity
 		{
 			lock ( _lock )
 			{
 				foreach ( var element in _collection.Values )
 				{
-					if ( element is TItem )
+					if ( element is TEntity )
 					{
-						return element as TItem;
+						return element as TEntity;
 					}
 				}
 
@@ -488,7 +488,7 @@ namespace ATS.Client
 			}
 		}
 
-		public TDOElement FindFirst( Func<TDOElement,bool> predicate )
+		public DOEntity FindFirst( Func<DOEntity,bool> predicate )
 		{
 			if ( predicate == null )
 			{
@@ -501,7 +501,7 @@ namespace ATS.Client
 			}
 		}
 
-		public TItem FindFirst<TItem>( Func<TItem , bool> predicate ) where TItem : TDOElement
+		public TEntity FindFirst<TEntity>( Func<TEntity , bool> predicate ) where TEntity : DOEntity
 		{
 			if ( predicate == null )
 			{
@@ -512,7 +512,7 @@ namespace ATS.Client
 			{
 				foreach ( var element in _collection.Values )
 				{
-					var desiredElement = element as TItem;
+					var desiredElement = element as TEntity;
 
 					if ( null == desiredElement )
 					{
@@ -529,11 +529,11 @@ namespace ATS.Client
 			}
 		}
 
-		public TDOElement FindById( Guid id )
+		public DOEntity FindById( Guid id )
 		{
 			lock ( _lock )
 			{
-				if ( _collection.TryGetValue( id , out TDOElement element ) )
+				if ( _collection.TryGetValue( id , out DOEntity element ) )
 				{
 					return element;
 				}
@@ -542,12 +542,12 @@ namespace ATS.Client
 			}
 		}
 
-		public TItem FindById<TItem>( Guid id ) where TItem : TDOElement 
+		public TEntity FindById<TEntity>( Guid id ) where TEntity : DOEntity 
 		{
-			return FindById( id ) as TItem;
+			return FindById( id ) as TEntity;
 		}
 
-		public TDOElement FindAt( int index )
+		public DOEntity FindAt( int index )
 		{
 			lock ( _lock )
 			{
@@ -560,12 +560,12 @@ namespace ATS.Client
 			}
 		}
 
-		public TItem FindAt<TItem>( int index ) where TItem : TDOElement
+		public TEntity FindAt<TEntity>( int index ) where TEntity : DOEntity
 		{
-			return FindAt( index ) as TItem;
+			return FindAt( index ) as TEntity;
 		}
 
-		public IList<TDOElement> ListAll()
+		public IList<DOEntity> ListAll()
 		{
 			lock ( _lock )
 			{
@@ -573,7 +573,7 @@ namespace ATS.Client
 			}
 		}
 
-		public IList<TDOElement> ListAll( Func<TDOElement , bool> predicate )
+		public IList<DOEntity> ListAll( Func<DOEntity , bool> predicate )
 		{
 			if ( predicate == null )
 			{
@@ -586,15 +586,15 @@ namespace ATS.Client
 			}
 		}
 
-		public IList<TItem> ListAll<TItem>() where TItem : TDOElement
+		public IList<TEntity> ListAll<TEntity>() where TEntity : DOEntity
 		{
 			lock ( _lock )
 			{
-				var results = new List<TItem>();
+				var results = new List<TEntity>();
 
 				foreach ( var element in _collection.Values )
 				{
-					var desiredElement = element as TItem;
+					var desiredElement = element as TEntity;
 
 					if ( null != desiredElement )
 					{
@@ -606,7 +606,7 @@ namespace ATS.Client
 			}
 		}
 
-		public IList<TItem> ListAll<TItem>( Func<TItem,bool> predicate ) where TItem : TDOElement
+		public IList<TEntity> ListAll<TEntity>( Func<TEntity,bool> predicate ) where TEntity : DOEntity
 		{
 			if ( predicate == null )
 			{
@@ -615,11 +615,11 @@ namespace ATS.Client
 
 			lock ( _lock )
 			{
-				var results = new List<TItem>();
+				var results = new List<TEntity>();
 
 				foreach ( var element in _collection.Values )
 				{
-					var desiredElement = element as TItem;
+					var desiredElement = element as TEntity;
 
 					if ( null == desiredElement )
 					{
@@ -646,7 +646,7 @@ namespace ATS.Client
 			}
 		}
 
-		public bool Remove( TDOElement element  )
+		public bool Remove( DOEntity element  )
 		{
 			if ( element == null )
 			{
@@ -682,7 +682,7 @@ namespace ATS.Client
 			}
 		}
 
-		public int RemoveRange( IEnumerable<TDOElement> elements )
+		public int RemoveRange( IEnumerable<DOEntity> elements )
 		{
 			if ( elements == null )
 			{

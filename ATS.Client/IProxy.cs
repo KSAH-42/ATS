@@ -7,7 +7,7 @@ namespace ATS.Client
 	using ATS.Client.Requests;
 	using ATS.Client.Responses;
 
-	public interface IClient
+	public interface IProxy
 	{
 		object SyncRoot
 		{

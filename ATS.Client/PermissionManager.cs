@@ -5,12 +5,12 @@ namespace ATS.Client
 {
 	public class PermissionManager
 	{
-		private readonly PermissionReadOnlyList _permissions = null;
+		private readonly DOPermissionReadOnlyList _permissions = null;
 
 
 
 
-		public PermissionManager( PermissionReadOnlyList permissions )
+		public PermissionManager( DOPermissionReadOnlyList permissions )
 		{
 			_permissions = permissions ?? throw new ArgumentNullException( nameof( permissions ) );
 

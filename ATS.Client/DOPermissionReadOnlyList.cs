@@ -4,14 +4,14 @@ using System.Collections.Generic;
 
 namespace ATS.Client
 {
-	public sealed class PermissionReadOnlyList : IEnumerable<Permission>
+	public sealed class DOPermissionReadOnlyList : IEnumerable<DOPermission>
 	{
-		private readonly PermissionList  _collection = null;
+		private readonly DOPermissionList  _collection = null;
 
 
 
 
-		public PermissionReadOnlyList( PermissionList collection )
+		public DOPermissionReadOnlyList( DOPermissionList collection )
 		{
 			_collection = collection ?? throw new ArgumentNullException( nameof( collection ) );
 		}
@@ -19,12 +19,12 @@ namespace ATS.Client
 
 
 
-		public Permission this[ int index ]
+		public DOPermission this[ int index ]
 		{
 			get => _collection[ index ];
 		}
 
-		public Permission this[ Guid uniqueId ]
+		public DOPermission this[ Guid uniqueId ]
 		{
 			get => _collection[ uniqueId ];
 		}
@@ -51,7 +51,7 @@ namespace ATS.Client
 			get => _collection.Count;
 		}
 
-		public ICollection<Permission> Values
+		public ICollection<DOPermission> Values
 		{
 			get => _collection.Values;
 		}
@@ -73,14 +73,9 @@ namespace ATS.Client
 			return _collection.GetEnumerator();
 		}
 
-		public IEnumerator<Permission> GetEnumerator()
+		public IEnumerator<DOPermission> GetEnumerator()
 		{
 			return _collection.GetEnumerator();
-		}
-
-		public void ForEach( Action<Permission> action )
-		{
-			_collection.ForEach( action );
 		}
 
 		public bool Any()
@@ -88,7 +83,7 @@ namespace ATS.Client
 			return _collection.Any();
 		}
 
-		public bool Any( Func<Permission , bool> predicate )
+		public bool Any( Func<DOPermission , bool> predicate )
 		{
 			return _collection.Any( predicate );
 		}
@@ -98,37 +93,27 @@ namespace ATS.Client
 			return _collection.ContainsKey( uniqueId );
 		}
 
-		public bool Contains( Permission element )
+		public bool Contains( DOPermission element )
 		{
 			return _collection.Contains( element );
 		}
 
-		public Permission GetById( Guid uniqueId )
-		{
-			return _collection.GetById( uniqueId );
-		}
-
-		public Permission FindById( Guid uniqueId )
+		public DOPermission FindById( Guid uniqueId )
 		{
 			return _collection.FindById( uniqueId );
 		}
 
-		public Permission GetAt( int index )
-		{
-			return _collection.GetAt( index );
-		}
-
-		public Permission FindAt( int index )
+		public DOPermission FindAt( int index )
 		{
 			return _collection.FindAt( index );
 		}
 
-		public IList<Permission> GetAll()
+		public IList<DOPermission> GetAll()
 		{
 			return _collection.GetAll();
 		}
 
-		public IList<Permission> GetAll( Func<Permission , bool> predicate )
+		public IList<DOPermission> GetAll( Func<DOPermission , bool> predicate )
 		{
 			return _collection.GetAll( predicate );
 		}

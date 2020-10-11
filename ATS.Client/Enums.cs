@@ -11,6 +11,8 @@ namespace ATS.Client
 		Card,
 
 		Setting,
+
+		Role,
 	}
 
 	public enum DOEventType

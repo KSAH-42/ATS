@@ -2,7 +2,7 @@
 
 namespace ATS.Client
 {
-	public sealed class DOAddress : DOValue
+	public sealed class DOAddress : DORoot
 	{
 		private string    _street    = string.Empty;
 

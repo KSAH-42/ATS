@@ -35,7 +35,7 @@ namespace ATS.Client
 			get;
 		}
 
-		public override Guid UniqueId
+		public Guid UniqueId
 		{
 			get => _uniqueId;
 		}

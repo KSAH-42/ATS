@@ -12,6 +12,7 @@ namespace ATS.Client
 
 		private readonly DOCredentials   _credentials   = new DOCredentials();
 
+		private Guid                     _roleId        = Guid.Empty;
 
 
 
@@ -48,6 +49,12 @@ namespace ATS.Client
 		public DOCredentials Credentials
 		{
 			get => _credentials;
+		}
+
+		public Guid RoleId
+		{
+			get => GetField( ref _roleId );
+			set => SetField( ref _roleId , value );
 		}
 
 		public override bool IsDirty

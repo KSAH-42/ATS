@@ -2,7 +2,7 @@
 
 namespace ATS.Client
 {
-	public sealed class DOPersonalInfos : DOValue
+	public sealed class DOPersonalInfos : DORoot
 	{
 		private string    _firstName     = string.Empty;
 
