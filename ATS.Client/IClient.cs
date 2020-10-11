@@ -19,16 +19,6 @@ namespace ATS.Client
 			get;
 		}
 
-		DOReadOnlyCache<DOEntity> Entities
-		{
-			get;
-		}
-
-		PermissionReadOnlyList Permissions
-		{
-			get;
-		}
-
 		HandlerList Handlers
 		{
 			get;

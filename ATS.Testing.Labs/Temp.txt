@@ -510,64 +510,38 @@
 			throw new NotImplementedException();
 		}
 
-		protected TResponse Invoke<TResponse>( FrontController controller )
-			where TResponse: BaseResponse
+
+		public FooResponse Foo( FooRequest request )
 		{
-			return controller.Execute( new FrontControllerContext() ) as TResponse ?? throw new Exception();
+		    throw new NotImplementedException();
 		}
 
-		protected Task<TResponse> InvokeAsync<TResponse>( FrontController controller )
-			where TResponse : BaseResponse
-		{
-			return Task<TResponse>.Run( () => controller.Execute( new FrontControllerContext() ) as TResponse ?? throw new Exception() );
-		}
-
-		protected Task<TResponse> InvokeAsync<TResponse>( FrontController controller , CancellationToken cancellationToken )
-			where TResponse : BaseResponse
-		{
-			return Task<TResponse>.Run( () => controller.Execute( new FrontControllerContext() ) as TResponse ?? throw new Exception() , cancellationToken );
-		}
 	}
 
-	public abstract class FrontController
+	public abstract class RequestInvoker
 	{
-		public abstract BaseResponse Execute( FrontControllerContext context );
+	    public abstract Response Execute();
+
+		public DbContext Database { get; set };
 	}
 
-	public class FrontControllerContext
+	
+	public class FooRequestInvoker : RequestInvoker
 	{
-		public TimeSpan Timeout { get; set; }
-		public string Server { get; set; }
-	}
+	    private readonly FooRequest _request;
 
-	public class AuthenicationController : FrontController
-	{
-		private readonly AuthenticationRequest _request;
-
-		public AuthenicationController(AuthenticationRequest request )
-		{				
-			_request = request;
+		public FooRequestInvoker( FooRequest request )
+		{
+		  _request = request;
 		}
 
-		public override BaseResponse Execute( FrontControllerContext context )
+	    public Response Execute()
 		{
-			return new AuthenticationResponse( Guid.Empty , Guid.Empty );
+		    Database.ExecuteSql( "delete from my_table" );
+
+		    return new FooResponse() { Result = request.Param1 + request.Param2 } ;
 		}
 	}
 
-	public class SaveEntityController : FrontController
-	{
-		private readonly SaveEntityRequest _request;
-
-		public SaveEntityController( SaveEntityRequest request )
-		{
-			_request = request;
-		}
-
-		public override BaseResponse Execute( FrontControllerContext context )
-		{
-			return new SaveEntityResponse( false );
-		}
-	}
 
 	
