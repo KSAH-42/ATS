@@ -5,11 +5,11 @@ namespace ATS.Client.Threading
 {
 	public sealed class Worker
 	{
+		private readonly Action _routine         = null;
+
 		private Thread          _thread          = null;
 
 		private EventWaitHandle _stopEventHandle = null;
-
-		private Action          _routine         = null;
 
 		private Exception       _exception       = null;
 
@@ -18,8 +18,9 @@ namespace ATS.Client.Threading
 
 
 
-		public Worker()
+		public Worker( Action routine )
 		{
+			_routine = routine ?? throw new ArgumentNullException( nameof( routine ) );
 		}
 
 
@@ -43,21 +44,15 @@ namespace ATS.Client.Threading
 
 
 
-		public void Start( Action routine )
+		public void Start()
 		{
-			if ( routine == null )
-			{
-				throw new ArgumentNullException( nameof( routine ) );
-			}
-
 			if ( this._thread != null || this._stopEventHandle != null )
 			{
 				throw new InvalidOperationException( "the thread is already started" );
 			}
 
 			_exception = null;
-			_routine = routine;
-
+			
 			var handle = new EventWaitHandle( false , EventResetMode.ManualReset );
 
 			var thread = new Thread( new ThreadStart( this.Execute ) )
@@ -66,7 +61,7 @@ namespace ATS.Client.Threading
 				IsBackground = true
 			};
 
-			this._thread = thread;
+			this._thread         = thread;
 			this._stopEventHandle = handle;
 
 			thread.Start();
@@ -96,12 +91,7 @@ namespace ATS.Client.Threading
 		{
 			var handle = this._stopEventHandle;
 
-			if ( handle != null )
-			{
-				return !handle.WaitOne( timeout );
-			}
-
-			return false;
+			return handle != null ? ! handle.WaitOne( timeout ) : false;
 		}
 
 
@@ -113,14 +103,9 @@ namespace ATS.Client.Threading
 
 		private void Execute()
 		{
-			var routine = this._routine;
-
 			try
 			{
-				if ( routine != null )
-				{
-					routine.Invoke();
-				}
+				_routine.Invoke();
 			}
 			catch ( Exception ex )
 			{
