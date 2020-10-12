@@ -1,6 +1,6 @@
 # ATS
 
-This project is actually under construction, there are some projects which doesn't contains any classes. Please, go back to this project few days later.
+This project is actually under construction, there are some projects which are empty. Please, go back in a few days.
 
 
 I create this project in order to explorer a different way to build client API using DDD approach.
