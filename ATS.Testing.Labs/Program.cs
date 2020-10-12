@@ -6,7 +6,6 @@ namespace ATS.Testing.Labs
 	{
 		static void Main( string[] args )
 		{
-			ATS.Client.Messaging.IProxy proxy;
 		}
 	}
 }

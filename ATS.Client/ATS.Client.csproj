@@ -41,6 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ClientConfiguration.cs" />
+    <Compile Include="Configuration\ConfigurationConstants.cs" />
+    <Compile Include="Configuration\ConfigurationException.cs" />
+    <Compile Include="Configuration\ConfigurationPropertyChangedEventArgs.cs" />
+    <Compile Include="Configuration\IClientConfiguration.cs" />
+    <Compile Include="Configuration\WebClientConfiguration.cs" />
     <Compile Include="Data\DORole.cs" />
     <Compile Include="Data\DOUser.cs" />
     <Compile Include="Data\Enums.cs" />
