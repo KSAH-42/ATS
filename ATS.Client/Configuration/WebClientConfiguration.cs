@@ -32,12 +32,12 @@ namespace ATS.Client.Configuration
 			{
 				if ( string.IsNullOrWhiteSpace( _server ) )
 				{
-					throw new ConfigurationException( "Bad server value" );
+					throw new ConfigurationException( "Bad configuration server value" );
 				}
 
 				if ( _timeout <= TimeSpan.Zero )
 				{
-					throw new ConfigurationException( "Bad timeout value" );
+					throw new ConfigurationException( "Bad configuration timeout value" );
 				}
 			}
 		}

@@ -1,4 +1,21 @@
-﻿using ATS.Client;
+﻿/*
+
+ATS.Client
+ATS.Client.Configuration
+ATS.Client.Entities
+ATS.Client.Entities.Transactions
+ATS.Client.Events
+ATS.Client.Services
+ATS.Client.Messaging
+ATS.Client.Messaging.Http
+ATS.Client.Messaging.Tcp
+ATS.Client.Messaging.Sql
+ATS.Client.Threading
+
+*/
+
+
+    using ATS.Client;
 	using ATS.Client.Requests;
 	using ATS.Client.Responses;
 	using System.Threading;

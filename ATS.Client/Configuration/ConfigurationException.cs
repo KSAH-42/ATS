@@ -7,7 +7,7 @@ namespace ATS.Client.Configuration
 	public class ConfigurationException : Exception
 	{
 		public ConfigurationException()
-			: this( "Configuration exception" )
+			: this( "Bad configuration" )
 		{
 		}
 
